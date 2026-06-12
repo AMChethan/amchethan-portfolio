@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A M Chethan | Java Full Stack Developer & Computer Science Engineer</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Portfolio of A M Chethan, a passionate Java Full Stack Developer and Computer Science Engineering graduate. Check out my projects, skills, and experience.">
+    <meta name="keywords" content="A M Chethan, Java Full Stack Developer, Computer Science Engineer, Portfolio, Software Engineer, Spring Boot, React Developer">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Canvas Background for floating particles & lines -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <header class="navbar-container">
+        <div class="navbar-wrapper">
+            <a href="#home" class="logo">
+                <span class="logo-txt">Chethan</span><span class="logo-dot">.</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#download-resume-btn" class="resume-btn mobile-resume">Resume</a>
+            </nav>
+            
+            <div class="right-nav">
+                <a href="#download-resume-btn" class="resume-btn desktop-resume">Resume</a>
+                <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Hero -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-tagline-wrapper reveal">
+                    <span class="tagline-badge">Ready for Opportunities</span>
+                </div>
+                <h1 class="hero-title reveal">
+                    Hi, I'm <span class="gradient-text">A M Chethan</span>
+                </h1>
+                <h2 class="hero-subtitle reveal">
+                    I am a <span id="typing-text"></span><span class="cursor">|</span>
+                </h2>
+                <p class="hero-description reveal">
+                    Building reliable, scalable software — one line at a time. Specializing in crafting backend business logic and interactive user interfaces.
+                </p>
+                <div class="hero-cta reveal">
+                    <a href="#projects" class="btn primary-btn">
+                        <span>View My Work</span> <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                    <a href="#download-resume-btn" class="btn secondary-btn" id="hero-resume-trigger">
+                        <span>Download Resume</span> <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mouse Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrows">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: About Me -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="underline"></div>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-img-container reveal">
+                        <!-- Premium Tech-Themed SVG Avatar/Illustration -->
+                        <div class="avatar-wrapper">
+                            <svg class="tech-avatar" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#00b4d8" />
+                                        <stop offset="100%" stop-color="#00f5d4" />
+                                    </linearGradient>
+                                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feGaussianBlur stdDeviation="8" result="blur" />
+                                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                    </filter>
+                                </defs>
+                                <circle cx="100" cy="100" r="90" fill="none" stroke="url(#avatarGrad)" stroke-width="2" stroke-dasharray="5,5" />
+                                <circle cx="100" cy="100" r="80" fill="none" stroke="url(#avatarGrad)" stroke-width="1" opacity="0.3" />
+                                
+                                <!-- Code block details and tech elements -->
+                                <rect x="55" y="60" width="90" height="80" rx="10" fill="#0f172a" stroke="url(#avatarGrad)" stroke-width="3" filter="url(#glow)" />
+                                <path d="M 65 75 L 85 75" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                                <path d="M 65 90 L 75 90" stroke="#00b4d8" stroke-width="3" stroke-linecap="round" />
+                                <path d="M 80 90 L 105 90" stroke="#00f5d4" stroke-width="3" stroke-linecap="round" />
+                                <path d="M 65 105 L 120 105" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                                <path d="M 65 120 L 95 120" stroke="#00b4d8" stroke-width="3" stroke-linecap="round" />
+                                
+                                <!-- Decorative floating items -->
+                                <circle cx="40" cy="50" r="6" fill="#00b4d8" opacity="0.8" />
+                                <circle cx="160" cy="150" r="8" fill="#00f5d4" opacity="0.8" />
+                                <path d="M 160 50 L 170 60 M 170 50 L 160 60" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" />
+                                <path d="M 35 150 L 45 160 M 45 150 L 35 160" stroke="#00f5d4" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="about-info reveal">
+                        <h3 class="about-subtitle">Computer Science Engineer &amp; Developer</h3>
+                        <p class="about-text">
+                            I'm a Computer Science Engineering graduate from <strong>Government Engineering College Chamarajanagara (CGPA: 8.7)</strong>, passionate about full-stack development with hands-on experience in Java, Spring Boot, React, and REST APIs.
+                        </p>
+                        <p class="about-text">
+                            I enjoy building real-world applications that solve actual problems, bridging the gap between back-end robustness and front-end aesthetics. I am actively looking for my first opportunity as a Software Engineer where I can contribute to exciting projects and grow professionally.
+                        </p>
+                        
+                        <div class="personal-details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fa-solid fa-envelope"></i> Email:</span>
+                                <span class="detail-val"><a href="mailto:amchethan61@gmail.com">amchethan61@gmail.com</a></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fa-solid fa-phone"></i> Phone:</span>
+                                <span class="detail-val"><a href="tel:+917483526212">+91 74835 26212</a></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fa-solid fa-location-dot"></i> Location:</span>
+                                <span class="detail-val">Mysore, Karnataka, India</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fa-solid fa-graduation-cap"></i> Education:</span>
+                                <span class="detail-val">B.E. Computer Science</span>
+                            </div>
+                        </div>
+
+                        <div class="about-socials">
+                            <a href="https://github.com/AMChethan" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/a-m-chethan" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="mailto:amchethan61@gmail.com" class="social-icon" aria-label="Email">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                            <a href="tel:+917483526212" class="social-icon" aria-label="Phone">
+                                <i class="fa-solid fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Skills -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">My Skills</h2>
+                    <div class="underline"></div>
+                </div>
+                
+                <div class="skills-grid">
+                    <!-- Programming Languages -->
+                    <div class="skills-card reveal">
+                        <div class="skills-card-header">
+                            <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+                            <h3>Programming Languages</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li><span class="skill-name">Java</span><span class="skill-bar"><span class="skill-progress" style="width: 85%"></span></span></li>
+                            <li><span class="skill-name">Python</span><span class="skill-bar"><span class="skill-progress" style="width: 75%"></span></span></li>
+                            <li><span class="skill-name">JavaScript</span><span class="skill-bar"><span class="skill-progress" style="width: 80%"></span></span></li>
+                            <li><span class="skill-name">C</span><span class="skill-bar"><span class="skill-progress" style="width: 70%"></span></span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Frontend -->
+                    <div class="skills-card reveal">
+                        <div class="skills-card-header">
+                            <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                            <h3>Frontend Development</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li><span class="skill-name">ReactJS</span><span class="skill-bar"><span class="skill-progress" style="width: 80%"></span></span></li>
+                            <li><span class="skill-name">HTML5 / CSS3</span><span class="skill-bar"><span class="skill-progress" style="width: 90%"></span></span></li>
+                            <li><span class="skill-name">JavaScript (ES6+)</span><span class="skill-bar"><span class="skill-progress" style="width: 80%"></span></span></li>
+                            <li><span class="skill-name">Responsive Design</span><span class="skill-bar"><span class="skill-progress" style="width: 85%"></span></span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="skills-card reveal">
+                        <div class="skills-card-header">
+                            <div class="card-icon"><i class="fa-solid fa-server"></i></div>
+                            <h3>Backend Development</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li><span class="skill-name">Spring Boot / Spring</span><span class="skill-bar"><span class="skill-progress" style="width: 80%"></span></span></li>
+                            <li><span class="skill-name">REST APIs</span><span class="skill-bar"><span class="skill-progress" style="width: 85%"></span></span></li>
+                            <li><span class="skill-name">Hibernate / JDBC</span><span class="skill-bar"><span class="skill-progress" style="width: 75%"></span></span></li>
+                            <li><span class="skill-name">Servlets / FastAPI</span><span class="skill-bar"><span class="skill-progress" style="width: 70%"></span></span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Databases -->
+                    <div class="skills-card reveal">
+                        <div class="skills-card-header">
+                            <div class="card-icon"><i class="fa-solid fa-database"></i></div>
+                            <h3>Databases</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li><span class="skill-name">MySQL</span><span class="skill-bar"><span class="skill-progress" style="width: 80%"></span></span></li>
+                            <li><span class="skill-name">SQL Queries</span><span class="skill-bar"><span class="skill-progress" style="width: 85%"></span></span></li>
+                            <li><span class="skill-name">Database Design</span><span class="skill-bar"><span class="skill-progress" style="width: 75%"></span></span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Tools & DevOps -->
+                    <div class="skills-card reveal">
+                        <div class="skills-card-header">
+                            <div class="card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                            <h3>Tools &amp; DevOps</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li><span class="skill-name">Git &amp; GitHub</span><span class="skill-bar"><span class="skill-progress" style="width: 85%"></span></span></li>
+                            <li><span class="skill-name">Docker</span><span class="skill-bar"><span class="skill-progress" style="width: 65%"></span></span></li>
+                            <li><span class="skill-name">VS Code / Eclipse</span><span class="skill-bar"><span class="skill-progress" style="width: 80%"></span></span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Core Concepts -->
+                    <div class="skills-card reveal">
+                        <div class="skills-card-header">
+                            <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+                            <h3>Core Concepts</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li><span class="skill-name">Data Structures &amp; Algos</span><span class="skill-bar"><span class="skill-progress" style="width: 75%"></span></span></li>
+                            <li><span class="skill-name">OOP Concepts</span><span class="skill-bar"><span class="skill-progress" style="width: 85%"></span></span></li>
+                            <li><span class="skill-name">DBMS &amp; OS</span><span class="skill-bar"><span class="skill-progress" style="width: 80%"></span></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Projects -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Projects</h2>
+                    <div class="underline"></div>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card reveal">
+                        <div class="project-banner">
+                            <span class="project-num">01</span>
+                            <div class="project-badge">Featured</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">BugBuster IDE</h3>
+                            <h4 class="project-subtitle">AI-Powered Multi-Language Development Environment</h4>
+                            <p class="project-desc">
+                                A full-stack intelligent IDE with automated error detection and fixes across multiple programming languages, powered by the DeepSeek Coder 1.3B ML model. Uses Spectrum-Based Fault Localization for automated patch generation, with a FastAPI REST backend and Docker containerization for reproducible execution.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">FastAPI</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">AI/ML</span>
+                                <span class="tag">JS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/AMChethan" target="_blank" rel="noopener noreferrer" class="proj-btn outline-btn">
+                                    <i class="fa-brands fa-github"></i> Source Code
+                                </a>
+                                <a href="#" class="proj-btn fill-btn disabled" aria-disabled="true">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card reveal">
+                        <div class="project-banner">
+                            <span class="project-num">02</span>
+                            <div class="project-badge">Live</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">YourStore</h3>
+                            <h4 class="project-subtitle">Responsive E-Commerce Website</h4>
+                            <p class="project-desc">
+                                A fully responsive e-commerce platform for browsing and purchasing electronic products including mobiles, laptops, TVs, gaming consoles, and headphones. Features a shopping cart, wishlist, order tracking, and a modern custom UI.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/AMChethan/YourStore" target="_blank" rel="noopener noreferrer" class="proj-btn outline-btn">
+                                    <i class="fa-brands fa-github"></i> Source Code
+                                </a>
+                                <a href="https://amchethan.github.io/YourStore/" target="_blank" rel="noopener noreferrer" class="proj-btn fill-btn">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card reveal">
+                        <div class="project-banner">
+                            <span class="project-num">03</span>
+                            <div class="project-badge">Python</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">AI-Powered Chatbot</h3>
+                            <h4 class="project-subtitle">NLP-Based Conversational Agent</h4>
+                            <p class="project-desc">
+                                A chatbot that understands user queries using Natural Language Processing, with intent recognition and context-aware response generation. Built using a full Python backend and JavaScript frontend integration.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">HTML5/CSS3</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">NLP</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/AMChethan" target="_blank" rel="noopener noreferrer" class="proj-btn outline-btn">
+                                    <i class="fa-brands fa-github"></i> Source Code
+                                </a>
+                                <a href="#" class="proj-btn fill-btn disabled" aria-disabled="true">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Experience -->
+        <section id="experience" class="section experience-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Experience</h2>
+                    <div class="underline"></div>
+                </div>
+                
+                <div class="timeline-container">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card-wrapper">
+                            <div class="timeline-header">
+                                <span class="timeline-date"><i class="fa-regular fa-calendar-days"></i> Jan 2026 – May 2026</span>
+                                <span class="timeline-badge">Training</span>
+                            </div>
+                            <h3 class="timeline-title">Java Full Stack Developer Training</h3>
+                            <h4 class="timeline-subtitle">QSpiders (Test Yantra Software Solutions), Mysore</h4>
+                            <p class="timeline-text">
+                                Trained rigorously in building end-to-end full-stack applications. Acquired deep knowledge and practical skills across core components:
+                            </p>
+                            <ul class="timeline-details-list">
+                                <li><strong>Java &amp; OOPs:</strong> Solid understanding of Object-Oriented Principles, Collections Framework, Multithreading, Exception Handling.</li>
+                                <li><strong>Frontend Tech:</strong> Built modern UI interfaces using ReactJS, HTML5, CSS3, JavaScript (ES6+), and asynchronous programming.</li>
+                                <li><strong>Backend &amp; DB:</strong> Covered Servlets, JDBC, REST API development, MySQL database design, CRUD operations, and relational mapping.</li>
+                                <li><strong>Workflows:</strong> Utilized Git for version control, collaborated on repositories, and followed clean code principles.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Education -->
+        <section id="education" class="section education-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Education</h2>
+                    <div class="underline"></div>
+                </div>
+                
+                <div class="education-grid">
+                    <!-- Education 1 -->
+                    <div class="education-card reveal">
+                        <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <span class="edu-duration">2022 – 2026</span>
+                        <h3 class="edu-degree">B.E. Computer Science &amp; Engineering</h3>
+                        <h4 class="edu-institution">Government Engineering College Chamarajanagara</h4>
+                        <div class="edu-result-badge">CGPA: 8.7 / 10</div>
+                    </div>
+
+                    <!-- Education 2 -->
+                    <div class="education-card reveal">
+                        <div class="edu-icon"><i class="fa-solid fa-school"></i></div>
+                        <span class="edu-duration">Class of 2022</span>
+                        <h3 class="edu-degree">PUC (Pre-University College)</h3>
+                        <h4 class="edu-institution">Sri Jayachamarajendra PU College, Mysore</h4>
+                        <div class="edu-result-badge">Score: 90.3%</div>
+                    </div>
+
+                    <!-- Education 3 -->
+                    <div class="education-card reveal">
+                        <div class="edu-icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <span class="edu-duration">Class of 2020</span>
+                        <h3 class="edu-degree">10th Grade CBSE</h3>
+                        <h4 class="edu-institution">JSS Public School, Mysore</h4>
+                        <div class="edu-result-badge">Score: 87%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Certifications & Achievements -->
+        <section id="certifications" class="section certifications-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Certifications &amp; Achievements</h2>
+                    <div class="underline"></div>
+                </div>
+                
+                <div class="certifications-grid">
+                    <!-- Cert 1 -->
+                    <div class="cert-card reveal">
+                        <div class="cert-icon-box">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3>Full Stack Development Certification</h3>
+                            <p class="cert-org">NoviTech Pvt. Ltd</p>
+                            <p class="cert-desc">Comprehensive certification validating expertise in building web applications from scratch, encompassing database design, REST interfaces, and client side views.</p>
+                        </div>
+                    </div>
+
+                    <!-- Cert 2 -->
+                    <div class="cert-card reveal">
+                        <div class="cert-icon-box">
+                            <i class="fa-solid fa-hands-holding-child"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3>Active Volunteer</h3>
+                            <p class="cert-org">Youth for Seva NGO</p>
+                            <p class="cert-desc">Dedicated volunteer contributing across domains: Education, Environment, Health, and Livelihood. Engaged in social impact initiatives, teaching drives, and clean-up programs.</p>
+                        </div>
+                    </div>
+
+                    <!-- Cert 3 -->
+                    <div class="cert-card reveal">
+                        <div class="cert-icon-box">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3>Seva Sadhaka Award</h3>
+                            <p class="cert-org">Youth for Seva</p>
+                            <p class="cert-desc">Awarded in recognition of outstanding commitment, hours of service, and leadership in driving social improvement programs within local communities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Contact -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="underline"></div>
+                </div>
+                
+                <div class="contact-grid">
+                    <!-- Contact Info Side -->
+                    <div class="contact-info-card reveal">
+                        <h3 class="contact-card-title">Let's Connect</h3>
+                        <p class="contact-card-desc">
+                            I am actively seeking full-time roles as a Software Engineer / Java Full Stack Developer. Whether you have an opportunity, want to discuss a project, or just want to connect, reach out!
+                        </p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-detail-item">
+                                <div class="item-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div>
+                                    <h4>Email Me</h4>
+                                    <p><a href="mailto:amchethan61@gmail.com">amchethan61@gmail.com</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-detail-item">
+                                <div class="item-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div>
+                                    <h4>Call Me</h4>
+                                    <p><a href="tel:+917483526212">+91 74835 26212</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-detail-item">
+                                <div class="item-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div>
+                                    <h4>Location</h4>
+                                    <p>Mysore, Karnataka, India</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-network">
+                            <h4>Find me on:</h4>
+                            <div class="network-icons">
+                                <a href="https://github.com/AMChethan" target="_blank" rel="noopener noreferrer" class="net-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/a-m-chethan" target="_blank" rel="noopener noreferrer" class="net-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Side -->
+                    <div class="contact-form-card reveal">
+                        <form id="portfolio-contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-name">Your Name</label>
+                                    <input type="text" id="form-name" placeholder="John Doe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-email">Your Email</label>
+                                    <input type="email" id="form-email" placeholder="john@example.com" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="form-subject">Subject</label>
+                                <input type="text" id="form-subject" placeholder="Opportunity details / Project proposal" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="form-message">Message</label>
+                                <textarea id="form-message" rows="6" placeholder="Hi Chethan, I'd like to talk about..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn" id="submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-icon"><i class="fa-solid fa-paper-plane"></i></span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-container">
+        <div class="footer-content">
+            <div class="footer-socials">
+                <a href="https://github.com/AMChethan" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/a-m-chethan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:amchethan61@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="tel:+917483526212" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+            </div>
+            <p class="footer-text">
+                Designed &amp; Built with <span class="heart-pulse"><i class="fa-solid fa-heart"></i></span> by A M Chethan
+            </p>
+            <p class="footer-copyright">
+                &copy; 2026. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Toast notification container for form feedback -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Resume Download Modal / PDF Generation Helper -->
+    <div id="download-resume-btn" style="display:none;"></div>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+</html>
