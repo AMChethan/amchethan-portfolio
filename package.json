@@ -1,14 +1,14 @@
 {
   "name": "amchethan-portfolio",
   "version": "1.0.0",
-  "description": "Stunning, modern, professional portfolio website for A M Chethan",
-  "main": "index.html",
+  "private": true,
+  "description": "Portfolio of A M Chethan - Software Engineer & AI Systems Architect",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^4.5.0"
+    "vite": "^6.2.0"
   }
 }

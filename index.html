@@ -1,610 +1,1595 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A M Chethan | Java Full Stack Developer & Computer Science Engineer</title>
-    
-    <!-- Meta tags for SEO -->
-    <meta name="description" content="Portfolio of A M Chethan, a passionate Java Full Stack Developer and Computer Science Engineering graduate. Check out my projects, skills, and experience.">
-    <meta name="keywords" content="A M Chethan, Java Full Stack Developer, Computer Science Engineer, Portfolio, Software Engineer, Spring Boot, React Developer">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A M Chethan | Software Engineer & AI Systems Architect Portfolio</title>
+  <meta name="description" content="Portfolio of A M Chethan - Computer Science Engineer specializing in AI-integrated platforms, Java Spring Boot microservices, React, and automated fault localization.">
+  <meta name="keywords" content="A M Chethan, Software Engineer, Java, Spring Boot, React, DeepSeek Coder, AI, Portfolio, Mysuru, Chamarajanagara">
+  <meta name="author" content="A M Chethan">
+  
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="A M Chethan | Software & AI Engineer Portfolio">
+  <meta property="og:description" content="Explore projects in AI-powered IDEs, Healthcare Platforms, and Full-Stack Java systems.">
+  <meta property="og:image" content="images/chethan-portrait.jpg">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2300F5A0'/><text x='50%' y='68%' font-size='56' font-weight='900' fill='%23080C14' text-anchor='middle' font-family='sans-serif'>C</text></svg>">
 </head>
 <body>
 
-    <!-- Canvas Background for floating particles & lines -->
-    <canvas id="bg-canvas"></canvas>
+  <!-- Global Hybrid Smart Neural Grid Background Canvas -->
+  <canvas id="smartBgCanvas" class="smart-bg-canvas" aria-hidden="true"></canvas>
 
-    <!-- Navigation Bar -->
-    <header class="navbar-container">
-        <div class="navbar-wrapper">
-            <a href="#home" class="logo">
-                <span class="logo-txt">Chethan</span><span class="logo-dot">.</span>
-            </a>
-            
-            <nav class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#education" class="nav-link">Education</a>
-                <a href="#certifications" class="nav-link">Certifications</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="#download-resume-btn" class="resume-btn mobile-resume">Resume</a>
-            </nav>
-            
-            <div class="right-nav">
-                <a href="#download-resume-btn" class="resume-btn desktop-resume">Resume</a>
-                <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation Menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+  <!-- Ambient Aura Lighting Orbs -->
+  <div class="ambient-glow glow-top-right"></div>
+  <div class="ambient-glow glow-mid-left"></div>
+  <div class="ambient-glow glow-bottom-right"></div>
+
+  <!-- =================================================================
+       NAVIGATION HEADER
+       ================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" id="brandLogo">
+        <div class="logo-badge">C</div>
+        <div class="logo-text-group">
+          <span class="logo-title">A M CHETHAN</span>
+          <span class="logo-sub">AI & Full-Stack Engineer</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#hero" class="nav-link active">Overview</a></li>
+          <li><a href="#pillars" class="nav-link">Philosophy</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#terminal" class="nav-link">AI Terminal</a></li>
+          <li><a href="#timeline" class="nav-link">Experience</a></li>
+          <li><a href="#volunteering" class="nav-link">Volunteering</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="nav-actions">
+        <!-- Modern Palette Switcher Dock -->
+        <div class="theme-switcher-dock" id="themeSwitcherDock" title="Select Theme Palette">
+          <button type="button" class="theme-dot-btn active" data-theme-name="emerald" title="Cyber Emerald (AI & Systems)" aria-label="Cyber Emerald Theme">
+            <span class="theme-dot-inner" style="background: #00F5A0; box-shadow: 0 0 8px #00F5A0;"></span>
+          </button>
+          <button type="button" class="theme-dot-btn" data-theme-name="violet" title="Electric Violet (Linear Style)" aria-label="Electric Violet Theme">
+            <span class="theme-dot-inner" style="background: #818CF8; box-shadow: 0 0 8px #818CF8;"></span>
+          </button>
+          <button type="button" class="theme-dot-btn" data-theme-name="cyan" title="Hyper Cyan (Deep Marine)" aria-label="Hyper Cyan Theme">
+            <span class="theme-dot-inner" style="background: #00E5FF; box-shadow: 0 0 8px #00E5FF;"></span>
+          </button>
+          <button type="button" class="theme-dot-btn" data-theme-name="sunset" title="Sunset Coral & Ember" aria-label="Sunset Coral Theme">
+            <span class="theme-dot-inner" style="background: #FF5E5B; box-shadow: 0 0 8px #FF5E5B;"></span>
+          </button>
+        </div>
+
+        <a href="#contact" class="gupio-yellow-btn">
+          <span>Let's Talk</span>
+          <span class="btn-indicator">
+            <span class="indicator-circle">
+              <svg viewBox="0 0 16 16" fill="none">
+                <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </span>
+        </a>
+
+        <!-- Mobile Drawer Toggle Button -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation drawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#hero" class="mobile-nav-link">Overview</a>
+    <a href="#pillars" class="mobile-nav-link">Philosophy</a>
+    <a href="#projects" class="mobile-nav-link">Projects</a>
+    <a href="#terminal" class="mobile-nav-link">AI Recruiter Terminal</a>
+    <a href="#timeline" class="mobile-nav-link">Experience & Education</a>
+    <a href="#volunteering" class="mobile-nav-link">Youth For Seva Impact</a>
+    <a href="#skills" class="mobile-nav-link">Technical Arsenal</a>
+    <a href="#contact" class="mobile-nav-link">Contact Me</a>
+    <div style="margin-top: 1.5rem;">
+      <a href="chethan_resume.pdf" target="_blank" class="gupio-yellow-btn" style="width: 100%; justify-content: center;">
+        <span>Download Full Resume (PDF)</span>
+      </a>
+    </div>
+  </div>
+
+  <main id="mainContent">
+
+    <!-- =================================================================
+         HERO SECTION (Inspired by Gupio Hero Design)
+         ================================================================= -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-content">
+          
+          <!-- Hero Text Column -->
+          <div class="hero-text-col">
+            <div class="hero-breadcrumb">
+              <span class="hero-breadcrumb-dot"></span>
+              <span>/ A M CHETHAN — SOFTWARE & AI SYSTEMS</span>
+            </div>
+
+            <h1 class="hero-title">
+              Architecting the future of
+              <span class="hero-title-highlight">AI Systems & Scalable Web</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              Computer Science Engineering graduate from GEC Chamarajanagara with hands-on experience engineering AI-driven developer platforms, robust Java Spring Boot microservices, high-performance React frontends, and Docker containerized deployments.
+            </p>
+
+            <!-- Quick Highlight Badges -->
+            <div class="hero-badge-row">
+              <span class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                Java & Spring Boot
+              </span>
+              <span class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M12 6v6l4 2"></path></svg>
+                DeepSeek Coder 1.3B
+              </span>
+              <span class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8"></path></svg>
+                React & Modern UI
+              </span>
+              <span class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                Docker & Cloud Ready
+              </span>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="hero-cta-group">
+              <a href="#projects" class="gupio-yellow-btn">
+                <span>View Engineered Projects</span>
+                <span class="btn-indicator">
+                  <span class="indicator-circle">
+                    <svg viewBox="0 0 16 16" fill="none">
+                      <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </span>
+              </a>
+
+              <a href="chethan_resume.pdf" target="_blank" class="btn-dark-pill" id="heroResumeBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Curriculum Vitae</span>
+              </a>
+            </div>
+
+            <div class="status-pill">
+              <span class="status-indicator-dot"></span>
+              <span>Available for Full-Time Software Engineering & AI Roles</span>
+            </div>
+          </div>
+
+          <!-- Hero Visual Column: Professional Photo with Tilt Badges & Interactive Switcher -->
+          <div class="hero-visual-col">
+            <div class="hero-visual-card">
+              
+              <!-- Gupio Signature Tilt Accent Badge (Top-Right) -->
+              <div class="tilt-badge-top">
+                <div class="tilt-badge-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <div class="tilt-badge-text">
+                  DeepSeek Coder 1.3B
+                  <span>AI Fault Localization</span>
+                </div>
+              </div>
+
+              <!-- Gupio Signature Tilt Accent Badge (Bottom-Left) -->
+              <div class="tilt-badge-bottom">
+                <div class="tilt-badge-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                </div>
+                <div class="tilt-badge-text">
+                  Spring Boot & React
+                  <span>Full-Stack Architecture</span>
+                </div>
+              </div>
+
+              <!-- Interactive Portrait Display Frame -->
+              <div class="portrait-frame-container" id="portraitContainer">
+                
+                <div class="portrait-display">
+                  <!-- Professional Studio Executive Portrait -->
+                  <img src="images/chethan-portrait.jpg" alt="A M Chethan - Professional Executive Studio Portrait" class="portrait-after" id="portraitAfter" loading="eager">
+                </div>
+
+                <div class="portrait-gradient-overlay"></div>
+
+                <div class="portrait-caption">
+                  <div>
+                    <h3 class="portrait-title-name">A M Chethan</h3>
+                    <p class="portrait-title-role">Software Engineer Intern @ NavaBharath</p>
+                  </div>
+
+                  <!-- Quick Connect Circles -->
+                  <div class="portrait-social-pills">
+                    <a href="https://www.linkedin.com/in/a-m-chethan" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="LinkedIn Profile">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                      </svg>
+                    </a>
+                    <a href="https://github.com/AMChethan" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="GitHub Profile">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         METRIC STATS RIBBON (Inspired by Gupio Section 02)
+         ================================================================= -->
+    <section class="stats-section" id="stats">
+      <div class="container">
+        <div class="stats-grid">
+          
+          <div class="stat-card">
+            <div class="stat-number">
+              <span class="counter" data-target="8.7">8.7</span>
+              <span class="stat-number-accent">/10</span>
+            </div>
+            <div class="stat-title">
+              Academic CGPA<br>Computer Science & Engineering
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number">
+              <span class="counter" data-target="1.3">1.3</span>
+              <span class="stat-number-accent">B</span>
+            </div>
+            <div class="stat-title">
+              Parameter AI Model<br>DeepSeek Coder Integrated
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number">
+              <span class="counter" data-target="100">100</span>
+              <span class="stat-number-accent">%</span>
+            </div>
+            <div class="stat-title">
+              Containerized Delivery<br>Dockerized Microservices
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number">
+              <span class="counter" data-target="2">2</span>
+              <span class="stat-number-accent">+</span>
+            </div>
+            <div class="stat-title">
+              Industry Internships<br>Enterprise Web & Healthcare
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         ENGINEERING PHILOSOPHY (Inspired by Gupio Section 03 - Values)
+         ================================================================= -->
+    <section class="pillars-section" id="pillars">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">ENGINEERING PHILOSOPHY</span>
+          <h2 class="section-title">
+            Principles Driving <span class="section-title-highlight">Every Line of Code</span>
+          </h2>
+          <p class="section-desc">
+            Bridging algorithmic precision in Java and algorithms with state-of-the-art AI intelligence and modern responsive interfaces.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          
+          <!-- Pillar 1 -->
+          <article class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="pillar-title">AI-Augmented Systems</h3>
+              <p class="pillar-text">
+                Not just consuming APIs, but deeply embedding localized ML models like DeepSeek Coder 1.3B with Spectrum-Based Fault Localization (SBFL) to synthesize automated code fixes and natural language interfaces.
+              </p>
+            </div>
+          </article>
+
+          <!-- Pillar 2 -->
+          <article class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </div>
+            <div>
+              <h3 class="pillar-title">Robust Backend Core</h3>
+              <p class="pillar-text">
+                Grounded in solid OOP, Data Structures, Spring Boot RESTful services, MySQL relational schema optimization, and Docker isolation to guarantee high reliability under production workloads.
+              </p>
+            </div>
+          </article>
+
+          <!-- Pillar 3 -->
+          <article class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="pillar-title">Impact-Focused Execution</h3>
+              <p class="pillar-text">
+                From developing hospital workflows for MediUnify serving healthcare providers to leading community outreach at Youth for Seva NGO, every engineering effort is dedicated to real-world human impact.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         FEATURED PROJECTS SHOWCASE
+         ================================================================= -->
+    <section class="projects-section" id="projects">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-label">FLAGSHIP PORTFOLIO</span>
+          <h2 class="section-title">
+            Featured <span class="section-title-highlight">Engineered Systems</span>
+          </h2>
+          <p class="section-desc">
+            Production-grade systems built with modern stacks, machine learning models, and enterprise architecture.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="projects-filter-bar">
+          <button class="filter-tab active" data-filter="all">All Systems</button>
+          <button class="filter-tab" data-filter="ai">AI / Machine Learning</button>
+          <button class="filter-tab" data-filter="fullstack">Enterprise Full-Stack</button>
+          <button class="filter-tab" data-filter="ecommerce">Frontend & E-Commerce</button>
+          <button class="filter-tab" data-filter="healthcare">Healthcare & SaaS</button>
+        </div>
+
+        <!-- Stacking Cards Deck Container -->
+        <div class="projects-stack-container" id="projectsStack">
+
+          <!-- Card 1: MediUnify Healthcare (Exact Gupio Yellow Theme) -->
+          <article class="project-card project-card-stack card-theme-yellow" data-index="1" data-category="fullstack healthcare">
+            <div class="card-overlay-shade"></div>
+            <div class="project-info-box">
+              <div class="project-meta-top">
+                <span class="project-category">Enterprise SaaS & Hospital Workflows</span>
+                <span class="project-dot"></span>
+                <span class="project-year">2026 – Present</span>
+              </div>
+
+              <h3 class="project-title">MediUnify – Unified Healthcare Platform</h3>
+              <p class="project-hook-sub">HOSPITAL CLINICAL WORKFLOWS. Unified Medical Operations In Real-Time.</p>
+              
+              <p class="project-description">
+                An integrated hospital clinical platform connecting patient admissions, doctor diagnostics, pharmacy inventory, and administrative workflows in real-time.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag"><span class="pill-dot"></span>React</span>
+                <span class="tech-tag"><span class="pill-dot"></span>JavaScript</span>
+                <span class="tech-tag"><span class="pill-dot"></span>HTML5</span>
+                <span class="tech-tag"><span class="pill-dot"></span>CSS3</span>
+                <span class="tech-tag"><span class="pill-dot"></span>Node.js</span>
+                <span class="tech-tag"><span class="pill-dot"></span>Express.js</span>
+              </div>
+
+              <div class="project-card-actions">
+                <button type="button" class="btn-dark-pill-black btn-trigger-terminal" data-query="What was Chethan's role at NavaBharath?">
+                  <span>Explore MediUnify Role</span>
+                  <span class="btn-indicator-black">
+                    <svg viewBox="0 0 16 16" fill="none">
+                      <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
                 </button>
+              </div>
             </div>
-        </div>
-    </header>
 
-    <main>
-        <!-- Section 1: Hero -->
-        <section id="home" class="hero-section">
-            <div class="hero-content">
-                <div class="hero-tagline-wrapper reveal">
-                    <span class="tagline-badge">Ready for Opportunities</span>
+            <div class="project-media-box">
+              <span class="project-badge-tag-dark">Enterprise Healthcare SaaS</span>
+              <img src="images/mediunify-logo.png" alt="MediUnify Healthcare Platform Official Logo" class="mediunify-logo-img" loading="lazy">
+            </div>
+          </article>
+
+          <!-- Card 2: BugBuster IDE (Gupio Warm Cocoa Espresso Theme) -->
+          <article class="project-card project-card-stack card-theme-cocoa" data-index="2" data-category="ai fullstack">
+            <div class="card-overlay-shade"></div>
+            <div class="project-media-box">
+              <span class="project-badge-tag">AI-Powered IDE</span>
+              <img src="images/bugbuster-preview.jpg" alt="BugBuster IDE - AI Powered Development Environment Mockup" loading="lazy">
+            </div>
+
+            <div class="project-info-box">
+              <div class="project-meta-top">
+                <span class="project-category">AI / ML & Developer Tools</span>
+                <span class="project-dot"></span>
+                <span class="project-year">2026 Flagship</span>
+              </div>
+
+              <h3 class="project-title">BugBuster IDE</h3>
+              <p class="project-hook-sub">AI-Powered Multi-Language IDE. Automated Fault Localization.</p>
+              
+              <p class="project-description">
+                An intelligent developer environment combining automated error localization (SBFL) with DeepSeek Coder 1.3B for real-time automated code repair and synthesis.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag"><span class="pill-dot"></span>DeepSeek 1.3B AI</span>
+                <span class="tech-tag"><span class="pill-dot"></span>Automated SBFL Repair</span>
+                <span class="tech-tag"><span class="pill-dot"></span>Docker Sandboxing</span>
+                <span class="tech-tag"><span class="pill-dot"></span>Spring Boot Core</span>
+              </div>
+
+              <div class="project-card-actions">
+                <button type="button" class="gupio-yellow-btn btn-trigger-terminal" data-query="Explain BugBuster IDE architecture">
+                  <span>Explore BugBuster IDE</span>
+                  <span class="btn-indicator">
+                    <span class="indicator-circle">
+                      <svg viewBox="0 0 16 16" fill="none">
+                        <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: AI-Powered Context-Aware Conversational Engine (Exact Gupio Obsidian Theme) -->
+          <article class="project-card project-card-stack card-theme-obsidian" data-index="3" data-category="ai">
+            <div class="card-overlay-shade"></div>
+            <div class="project-info-box">
+              <div class="project-meta-top">
+                <span class="project-category">Conversational AI & NLP</span>
+                <span class="project-dot"></span>
+                <span class="project-year">2025 – 2026</span>
+              </div>
+
+              <h3 class="project-title">AI-Powered Conversational Engine</h3>
+              <p class="project-hook-sub">INTELLIGENT NATURAL LANGUAGE RESPONSES. Multi-Turn Intent Recognition & Memory.</p>
+              
+              <p class="project-description">
+                An intelligent conversational system built with Python NLP pipelines to interpret multi-step intents, maintain session context, and deliver low-latency responses.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag"><span class="pill-dot"></span>Python NLP Core</span>
+                <span class="tech-tag"><span class="pill-dot"></span>Intent Recognition</span>
+                <span class="tech-tag"><span class="pill-dot"></span>Context Memory</span>
+                <span class="tech-tag"><span class="pill-dot"></span>FastAPI REST</span>
+              </div>
+
+              <div class="project-card-actions">
+                <button type="button" class="gupio-yellow-btn btn-trigger-terminal" data-query="How does Chethan's AI Chatbot work?">
+                  <span>Chatbot Details</span>
+                  <span class="btn-indicator">
+                    <span class="indicator-circle">
+                      <svg viewBox="0 0 16 16" fill="none">
+                        <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <div class="project-media-box">
+              <span class="project-badge-tag">Natural Language Processing</span>
+              <img src="images/chatbot-preview.jpg" alt="AI-Powered NLP Chatbot Engine Mockup" loading="lazy">
+            </div>
+          </article>
+
+          <!-- Card 4: YourStore E-Commerce (Exact Gupio Crisp Clean White Card in Front) -->
+          <article class="project-card project-card-stack card-theme-white" data-index="4" data-category="ecommerce fullstack">
+            <div class="card-overlay-shade"></div>
+            <div class="project-media-box">
+              <span class="project-badge-tag-dark">Responsive E-Commerce</span>
+              <img src="images/yourstore-preview.jpg" alt="YourStore E-Commerce Web Application Mockup" loading="lazy">
+            </div>
+
+            <div class="project-info-box">
+              <div class="project-meta-top">
+                <span class="project-category">Frontend & E-Commerce Web App</span>
+                <span class="project-dot"></span>
+                <span class="project-year">Live Production</span>
+              </div>
+
+              <h3 class="project-title">YourStore – Responsive E-Commerce Platform</h3>
+              <p class="project-hook-sub">DYNAMIC PRODUCT DISCOVERY. Instant Keyword Search & Cart Engine.</p>
+              
+              <p class="project-description">
+                A responsive e-commerce web application engineered with instant auto-suggest search, dynamic category filtering, persistent client cart, and modern UI.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag"><span class="pill-dot"></span>JavaScript (ES6+)</span>
+                <span class="tech-tag"><span class="pill-dot"></span>Instant Auto-Suggest</span>
+                <span class="tech-tag"><span class="pill-dot"></span>Client-Side Cart</span>
+                <span class="tech-tag"><span class="pill-dot"></span>Bootstrap UI/UX</span>
+              </div>
+
+              <div class="project-card-actions">
+                <a href="https://amchethan.github.io/YourStore/" target="_blank" rel="noopener noreferrer" class="btn-white-card-primary">
+                  <span>Visit Live Demo</span>
+                  <span class="btn-dot-indicator"></span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         INTERACTIVE AI RECRUITER TERMINAL & PLAYGROUND
+         ================================================================= -->
+    <section class="terminal-section" id="terminal">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-label">INTERACTIVE DEMONSTRATION</span>
+          <h2 class="section-title">
+            Ask Chethan's <span class="section-title-highlight">AI Knowledge Engine</span>
+          </h2>
+          <p class="section-desc">
+            Test the AI agent trained on Chethan's engineering background, internships, and technical architecture.
+          </p>
+        </div>
+
+        <div class="terminal-wrapper">
+          <!-- Terminal Window Top Bar -->
+          <div class="terminal-header">
+            <div class="terminal-window-buttons">
+              <span class="term-dot red" title="Close"></span>
+              <span class="term-dot yellow" title="Minimize"></span>
+              <span class="term-dot green" title="Maximize"></span>
+            </div>
+            <div class="terminal-title-bar">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+              <span>chethan-ai@deepseek-v1: ~/engineering/chethan-profile</span>
+            </div>
+            <div class="terminal-header-actions">
+              <div class="terminal-status-tag">
+                <span class="status-pulse-dot"></span>
+                <span>DeepSeek-Coder 1.3B • Online</span>
+              </div>
+              <button type="button" class="term-jd-toggle-btn" id="termJdToggleBtn" title="Paste or Upload Job Description to Match">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                <span>Match JD</span>
+              </button>
+              <button type="button" class="term-clear-btn" id="termClearBtn" title="Reset / Clear Terminal">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                <span>Reset</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Collapsible Job Description Matcher Drawer -->
+          <div class="term-jd-drawer" id="termJdDrawer">
+            <div class="term-jd-drawer-header">
+              <div class="jd-drawer-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span>RECRUITER AI MATCHER • Paste or Upload Job Description</span>
+              </div>
+              <button type="button" class="jd-drawer-close" id="termJdCloseBtn" title="Close JD Matcher">&times;</button>
+            </div>
+            <p class="term-jd-drawer-desc">
+              Paste any software engineering job description or upload a file. The AI engine will compute candidate match percentage, technical coverage, and hiring suitability.
+            </p>
+            <div class="term-jd-textarea-wrapper">
+              <textarea class="term-jd-textarea" id="termJdTextarea" rows="4" placeholder="Paste any Software Engineer / Full Stack / Backend / Frontend Job Description here..."></textarea>
+            </div>
+            <div class="term-jd-drawer-actions">
+              <div class="term-jd-left-actions">
+                <label class="term-btn-upload">
+                  <input type="file" id="termJdFileInput" accept=".txt,.json,.md,.doc,.docx,.pdf" style="display:none;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                  <span id="termUploadLabelText">Upload JD File (.txt, .pdf, .md)</span>
+                </label>
+                <button type="button" class="term-btn-sample" id="termSampleJdBtn">
+                  <span>⚡ Load Sample SDE JD</span>
+                </button>
+              </div>
+              <button type="button" class="term-btn-analyze-jd" id="termAnalyzeJdBtn">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>
+                <span>Calculate Match % &amp; Fit</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Log stream / Chat conversation -->
+          <div class="terminal-body" id="termBody">
+            <div class="term-log-stream" id="termLogStream">
+              
+              <div class="term-bubble system">
+                <div class="term-bubble-meta">
+                  <span class="term-badge-system">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4"></path><line x1="8" y1="16" x2="8.01" y2="16"></line><line x1="16" y1="16" x2="16.01" y2="16"></line></svg>
+                    SYSTEM INITIALIZED
+                  </span>
+                  <span class="term-meta-tag">DeepSeek-Coder-1.3B-FineTuned</span>
+                  <span class="term-meta-time">Ready</span>
                 </div>
-                <h1 class="hero-title reveal">
-                    Hi, I'm <span class="gradient-text">A M Chethan</span>
-                </h1>
-                <h2 class="hero-subtitle reveal">
-                    I am a <span id="typing-text"></span><span class="cursor">|</span>
-                </h2>
-                <p class="hero-description reveal">
-                    Building reliable, scalable software — one line at a time. Specializing in crafting backend business logic and interactive user interfaces.
+                <div class="term-bubble-content">
+                  Welcome to Chethan's interactive AI knowledge engine. Click any suggested prompt below, type your questions, or click <strong>Match JD</strong> to upload/paste any job description and compute match percentage.
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Suggestion Chips Bar -->
+          <div class="term-suggestions-bar">
+            <div class="term-suggestions-header">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              <span>Quick Prompts &amp; Recruiter Tools:</span>
+            </div>
+            <div class="term-suggestions">
+              <button type="button" class="term-prompt-chip chip-highlight-jd" id="chipUploadJd">
+                <span class="chip-emoji">🎯</span>
+                <span>Match Job Description (JD Match %)</span>
+              </button>
+              <button type="button" class="term-prompt-chip" data-prompt="Tell me about Chethan in 3 bullet points">
+                <span class="chip-emoji">⚡</span>
+                <span>Chethan in 3 bullet points</span>
+              </button>
+              <button type="button" class="term-prompt-chip" data-prompt="Explain BugBuster IDE architecture">
+                <span class="chip-emoji">🛠️</span>
+                <span>BugBuster IDE &amp; DeepSeek</span>
+              </button>
+              <button type="button" class="term-prompt-chip" data-prompt="What was Chethan's role at NavaBharath?">
+                <span class="chip-emoji">🏥</span>
+                <span>NavaBharath &amp; MediUnify</span>
+              </button>
+              <button type="button" class="term-prompt-chip" data-prompt="Tell me about the YourStore e-commerce project">
+                <span class="chip-emoji">🛍️</span>
+                <span>YourStore E-Commerce</span>
+              </button>
+              <button type="button" class="term-prompt-chip" data-prompt="What is Chethan's full tech stack?">
+                <span class="chip-emoji">💻</span>
+                <span>Complete Tech Stack</span>
+              </button>
+              <button type="button" class="term-prompt-chip" data-prompt="Why should our team hire Chethan?">
+                <span class="chip-emoji">🎯</span>
+                <span>Why Hire Chethan?</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Input bar -->
+          <form class="term-input-bar" id="termForm">
+            <div class="term-cli-prompt">
+              <span class="cli-user">guest@chethan-dev</span><span class="cli-colon">:</span><span class="cli-tilde">~</span><span class="cli-arrow">❯</span>
+            </div>
+            <input type="text" class="term-input-field" id="termInput" placeholder="Ask anything, or paste a Job Description to compute match %..." autocomplete="off">
+            <button type="submit" class="term-submit-btn" id="termSubmitBtn">
+              <span>Run Query</span>
+              <kbd class="term-kbd">↵</kbd>
+            </button>
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =================================================================
+         EXPERIENCE & EDUCATION TIMELINE
+         ================================================================= -->
+    <section class="timeline-section" id="timeline">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-label">CAREER MILESTONES</span>
+          <h2 class="section-title">
+            Internships & <span class="section-title-highlight">Academic Track Record</span>
+          </h2>
+          <p class="section-desc">
+            Hands-on software development experience across healthcare SaaS, enterprise Java full-stack applications, and community leadership.
+          </p>
+        </div>
+
+        <div class="timeline-cards-wrapper">
+
+          <!-- NavaBharath Internship -->
+          <article class="timeline-item">
+            <div class="timeline-period-col">
+              <span class="timeline-dates">2026 – PRESENT</span>
+              <h3 class="timeline-company">NavaBharath Technologies</h3>
+              <span class="timeline-location">Mysore, India</span>
+            </div>
+
+            <div class="timeline-details-col">
+              <h4 class="timeline-role-title">Software Engineer Intern</h4>
+              <ul class="timeline-bullet-list">
+                <li>Contributing to the engineering of <strong>MediUnify</strong>, an integrated healthcare platform spanning patient, hospital, pharmacy, and administrative applications.</li>
+                <li>Developing hospital-side web applications, implementing complex medical workflows, appointment scheduling, and patient management interfaces.</li>
+                <li>Collaborating with cross-functional development teams to refine features based on real clinical and administrative requirements.</li>
+              </ul>
+              <div class="timeline-pill-row">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">HTML5 / CSS3</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express.js</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- QSpiders Internship -->
+          <article class="timeline-item">
+            <div class="timeline-period-col">
+              <span class="timeline-dates">JAN 2026 – MAY 2026</span>
+              <h3 class="timeline-company">QSpiders (Test Yantra Software)</h3>
+              <span class="timeline-location">Mysore, India</span>
+            </div>
+
+            <div class="timeline-details-col">
+              <h4 class="timeline-role-title">Java Full Stack Development Intern</h4>
+              <ul class="timeline-bullet-list">
+                <li>Developed full-stack web applications leveraging React, JavaScript, HTML5, CSS3, Java, and MySQL.</li>
+                <li>Constructed complete end-to-end CRUD operations, optimized relational database schemas, and exposed clean REST APIs.</li>
+                <li>Practiced version control workflows with Git, team collaboration, and software engineering best practices.</li>
+              </ul>
+              <div class="timeline-pill-row">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Spring</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">CRUD</span>
+                <span class="tech-tag">Git</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Education -->
+          <article class="timeline-item">
+            <div class="timeline-period-col">
+              <span class="timeline-dates">2022 – 2026</span>
+              <h3 class="timeline-company">Govt Engineering College</h3>
+              <span class="timeline-location">Chamarajanagara, Karnataka</span>
+            </div>
+
+            <div class="timeline-details-col">
+              <h4 class="timeline-role-title">Bachelor of Engineering (B.E.) in Computer Science & Engineering</h4>
+              <ul class="timeline-bullet-list">
+                <li>Graduated with an outstanding academic record: <strong>CGPA: 8.7 / 10</strong>.</li>
+                <li>Rigorous coursework in Data Structures, Object-Oriented Programming (OOP), Database Management Systems (DBMS), Operating Systems, and Compiler Design.</li>
+                <li>Conducted research and implementation of automated patch generation utilizing DeepSeek Coder 1.3B and Spectrum-Based Fault Localization.</li>
+              </ul>
+              <div class="timeline-pill-row">
+                <span class="tech-tag">CGPA 8.7</span>
+                <span class="tech-tag">Data Structures</span>
+                <span class="tech-tag">OOP</span>
+                <span class="tech-tag">DBMS</span>
+                <span class="tech-tag">AI/ML</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Leadership & Social Responsibility Bridge Card -->
+          <div class="timeline-bridge-card">
+            <div class="bridge-left">
+              <span class="bridge-badge">★ LEADERSHIP & IMPACT</span>
+              <h4 class="bridge-title">Looking for Community Impact & "Seva Sadhaka" Initiatives?</h4>
+              <p class="bridge-desc">Explore Chethan's dedicated social impact work, Texas Instruments school drives, and multi-agency police festival logistics.</p>
+            </div>
+            <a href="#volunteering" class="gupio-yellow-btn bridge-btn">
+              <span>View Youth For Seva Section</span>
+              <span class="btn-indicator">
+                <span class="indicator-circle">
+                  <svg viewBox="0 0 16 16" fill="none">
+                    <path d="M8 2v12M4 10l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         YOUTH FOR SEVA - DEDICATED SOCIAL IMPACT & LEADERSHIP SECTION
+         ================================================================= -->
+    <section class="volunteering-section" id="volunteering">
+      <!-- Ambient Glow Behind Section -->
+      <div class="ambient-glow glow-volunteering-top"></div>
+      
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <div class="section-badge-center">
+            <span class="vol-org-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              COMMUNITY RECOGNITION
+            </span>
+          </div>
+          <span class="section-label">COMMUNITY LEADERSHIP & SOCIAL RESPONSIBILITY</span>
+          <h2 class="section-title">
+            Youth For Seva <span class="section-title-highlight">Chronicles</span>
+          </h2>
+          <p class="section-subtext">
+            Beyond engineering algorithms: conferred the prestigious <strong>"Seva Sadhaka"</strong> leadership honor for active volunteer execution, multi-agency diplomacy, and grassroots social empowerment across Mysuru and Chamarajanagara.
+          </p>
+        </div>
+
+        <!-- High-Impact Leadership & Metrics Showcase Banner -->
+        <div class="vol-hero-banner">
+          <div class="vol-hero-content">
+            <div class="vol-hero-left">
+              <div class="vol-org-emblem-large">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </div>
+              <div class="vol-hero-details">
+                <div class="vol-status-row">
+                  <span class="vol-status-chip">
+                    <span class="chip-pulse"></span>
+                    <span>Active Volunteer & Leader</span>
+                  </span>
+                  <span class="award-chip">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <span>"Seva Sadhaka" Honoree</span>
+                  </span>
+                </div>
+                <h3 class="vol-org-title">Youth for Seva NGO</h3>
+                <p class="vol-org-desc">
+                  Spearheading on-ground initiatives in competitive scholarship education (National Means-cum-Merit Scholarship Scheme), Texas Instruments educational kit distribution, and public festival crowd safety in collaboration with Tier-1 partners and Karnataka Police.
                 </p>
-                <div class="hero-cta reveal">
-                    <a href="#projects" class="btn primary-btn">
-                        <span>View My Work</span> <i class="fa-solid fa-arrow-down"></i>
-                    </a>
-                    <a href="#download-resume-btn" class="btn secondary-btn" id="hero-resume-trigger">
-                        <span>Download Resume</span> <i class="fa-solid fa-download"></i>
-                    </a>
-                </div>
+              </div>
             </div>
-            
-            <!-- Mouse Scroll Indicator -->
-            <div class="scroll-indicator">
-                <div class="mouse">
-                    <div class="wheel"></div>
-                </div>
-                <div class="arrows">
-                    <span></span>
-                    <span></span>
-                </div>
+
+            <!-- 4 Metrics Counters -->
+            <div class="vol-impact-metrics">
+              <div class="metric-card">
+                <span class="metric-value">100+</span>
+                <span class="metric-label">School Kits Gifted</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-value">50+</span>
+                <span class="metric-label">Govt Students Coached</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-value">60+</span>
+                <span class="metric-label">Volunteers Mobilized</span>
+              </div>
+              <div class="metric-card highlight-card">
+                <span class="metric-value">NGO Award</span>
+                <span class="metric-label">"Seva Sadhaka" Honor</span>
+              </div>
             </div>
-        </section>
-
-        <!-- Section 2: About Me -->
-        <section id="about" class="section about-section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2 class="section-title">About Me</h2>
-                    <div class="underline"></div>
-                </div>
-                
-                <div class="about-grid">
-                    <div class="about-img-container reveal">
-                        <!-- Premium Tech-Themed SVG Avatar/Illustration -->
-                        <div class="avatar-wrapper">
-                            <svg class="tech-avatar" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stop-color="#00b4d8" />
-                                        <stop offset="100%" stop-color="#00f5d4" />
-                                    </linearGradient>
-                                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                                        <feGaussianBlur stdDeviation="8" result="blur" />
-                                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                                    </filter>
-                                </defs>
-                                <circle cx="100" cy="100" r="90" fill="none" stroke="url(#avatarGrad)" stroke-width="2" stroke-dasharray="5,5" />
-                                <circle cx="100" cy="100" r="80" fill="none" stroke="url(#avatarGrad)" stroke-width="1" opacity="0.3" />
-                                
-                                <!-- Code block details and tech elements -->
-                                <rect x="55" y="60" width="90" height="80" rx="10" fill="#0f172a" stroke="url(#avatarGrad)" stroke-width="3" filter="url(#glow)" />
-                                <path d="M 65 75 L 85 75" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
-                                <path d="M 65 90 L 75 90" stroke="#00b4d8" stroke-width="3" stroke-linecap="round" />
-                                <path d="M 80 90 L 105 90" stroke="#00f5d4" stroke-width="3" stroke-linecap="round" />
-                                <path d="M 65 105 L 120 105" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
-                                <path d="M 65 120 L 95 120" stroke="#00b4d8" stroke-width="3" stroke-linecap="round" />
-                                
-                                <!-- Decorative floating items -->
-                                <circle cx="40" cy="50" r="6" fill="#00b4d8" opacity="0.8" />
-                                <circle cx="160" cy="150" r="8" fill="#00f5d4" opacity="0.8" />
-                                <path d="M 160 50 L 170 60 M 170 50 L 160 60" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" />
-                                <path d="M 35 150 L 45 160 M 45 150 L 35 160" stroke="#00f5d4" stroke-width="2" stroke-linecap="round" />
-                            </svg>
-                        </div>
-                    </div>
-                    
-                    <div class="about-info reveal">
-                        <h3 class="about-subtitle">Computer Science Engineer &amp; Developer</h3>
-                        <p class="about-text">
-                            I'm a Computer Science Engineering graduate from <strong>Government Engineering College Chamarajanagara (CGPA: 8.7)</strong>, passionate about full-stack development with hands-on experience in Java, Spring Boot, React, and REST APIs.
-                        </p>
-                        <p class="about-text">
-                            I enjoy building real-world applications that solve actual problems, bridging the gap between back-end robustness and front-end aesthetics. I am actively looking for my first opportunity as a Software Engineer where I can contribute to exciting projects and grow professionally.
-                        </p>
-                        
-                        <div class="personal-details-grid">
-                            <div class="detail-item">
-                                <span class="detail-label"><i class="fa-solid fa-envelope"></i> Email:</span>
-                                <span class="detail-val"><a href="mailto:amchethan61@gmail.com">amchethan61@gmail.com</a></span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label"><i class="fa-solid fa-phone"></i> Phone:</span>
-                                <span class="detail-val"><a href="tel:+917483526212">+91 74835 26212</a></span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label"><i class="fa-solid fa-location-dot"></i> Location:</span>
-                                <span class="detail-val">Mysore, Karnataka, India</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label"><i class="fa-solid fa-graduation-cap"></i> Education:</span>
-                                <span class="detail-val">B.E. Computer Science</span>
-                            </div>
-                        </div>
-
-                        <div class="about-socials">
-                            <a href="https://github.com/AMChethan" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/a-m-chethan" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </a>
-                            <a href="mailto:amchethan61@gmail.com" class="social-icon" aria-label="Email">
-                                <i class="fa-solid fa-envelope"></i>
-                            </a>
-                            <a href="tel:+917483526212" class="social-icon" aria-label="Phone">
-                                <i class="fa-solid fa-phone"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 3: Skills -->
-        <section id="skills" class="section skills-section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2 class="section-title">My Skills</h2>
-                    <div class="underline"></div>
-                </div>
-                
-                <div class="skills-grid">
-                    <!-- Programming Languages -->
-                    <div class="skills-card reveal">
-                        <div class="skills-card-header">
-                            <div class="card-icon"><i class="fa-solid fa-code"></i></div>
-                            <h3>Programming Languages</h3>
-                        </div>
-                        <ul class="skills-list">
-                            <li><span class="skill-name">Java</span><span class="skill-bar"><span class="skill-progress" style="width: 85%"></span></span></li>
-                            <li><span class="skill-name">Python</span><span class="skill-bar"><span class="skill-progress" style="width: 75%"></span></span></li>
-                            <li><span class="skill-name">JavaScript</span><span class="skill-bar"><span class="skill-progress" style="width: 80%"></span></span></li>
-                            <li><span class="skill-name">C</span><span class="skill-bar"><span class="skill-progress" style="width: 70%"></span></span></li>
-                        </ul>
-                    </div>
-
-                    <!-- Frontend -->
-                    <div class="skills-card reveal">
-                        <div class="skills-card-header">
-                            <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                            <h3>Frontend Development</h3>
-                        </div>
-                        <ul class="skills-list">
-                            <li><span class="skill-name">ReactJS</span><span class="skill-bar"><span class="skill-progress" style="width: 80%"></span></span></li>
-                            <li><span class="skill-name">HTML5 / CSS3</span><span class="skill-bar"><span class="skill-progress" style="width: 90%"></span></span></li>
-                            <li><span class="skill-name">JavaScript (ES6+)</span><span class="skill-bar"><span class="skill-progress" style="width: 80%"></span></span></li>
-                            <li><span class="skill-name">Responsive Design</span><span class="skill-bar"><span class="skill-progress" style="width: 85%"></span></span></li>
-                        </ul>
-                    </div>
-
-                    <!-- Backend -->
-                    <div class="skills-card reveal">
-                        <div class="skills-card-header">
-                            <div class="card-icon"><i class="fa-solid fa-server"></i></div>
-                            <h3>Backend Development</h3>
-                        </div>
-                        <ul class="skills-list">
-                            <li><span class="skill-name">Spring Boot / Spring</span><span class="skill-bar"><span class="skill-progress" style="width: 80%"></span></span></li>
-                            <li><span class="skill-name">REST APIs</span><span class="skill-bar"><span class="skill-progress" style="width: 85%"></span></span></li>
-                            <li><span class="skill-name">Hibernate / JDBC</span><span class="skill-bar"><span class="skill-progress" style="width: 75%"></span></span></li>
-                            <li><span class="skill-name">Servlets / FastAPI</span><span class="skill-bar"><span class="skill-progress" style="width: 70%"></span></span></li>
-                        </ul>
-                    </div>
-
-                    <!-- Databases -->
-                    <div class="skills-card reveal">
-                        <div class="skills-card-header">
-                            <div class="card-icon"><i class="fa-solid fa-database"></i></div>
-                            <h3>Databases</h3>
-                        </div>
-                        <ul class="skills-list">
-                            <li><span class="skill-name">MySQL</span><span class="skill-bar"><span class="skill-progress" style="width: 80%"></span></span></li>
-                            <li><span class="skill-name">SQL Queries</span><span class="skill-bar"><span class="skill-progress" style="width: 85%"></span></span></li>
-                            <li><span class="skill-name">Database Design</span><span class="skill-bar"><span class="skill-progress" style="width: 75%"></span></span></li>
-                        </ul>
-                    </div>
-
-                    <!-- Tools & DevOps -->
-                    <div class="skills-card reveal">
-                        <div class="skills-card-header">
-                            <div class="card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                            <h3>Tools &amp; DevOps</h3>
-                        </div>
-                        <ul class="skills-list">
-                            <li><span class="skill-name">Git &amp; GitHub</span><span class="skill-bar"><span class="skill-progress" style="width: 85%"></span></span></li>
-                            <li><span class="skill-name">Docker</span><span class="skill-bar"><span class="skill-progress" style="width: 65%"></span></span></li>
-                            <li><span class="skill-name">VS Code / Eclipse</span><span class="skill-bar"><span class="skill-progress" style="width: 80%"></span></span></li>
-                        </ul>
-                    </div>
-
-                    <!-- Core Concepts -->
-                    <div class="skills-card reveal">
-                        <div class="skills-card-header">
-                            <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
-                            <h3>Core Concepts</h3>
-                        </div>
-                        <ul class="skills-list">
-                            <li><span class="skill-name">Data Structures &amp; Algos</span><span class="skill-bar"><span class="skill-progress" style="width: 75%"></span></span></li>
-                            <li><span class="skill-name">OOP Concepts</span><span class="skill-bar"><span class="skill-progress" style="width: 85%"></span></span></li>
-                            <li><span class="skill-name">DBMS &amp; OS</span><span class="skill-bar"><span class="skill-progress" style="width: 80%"></span></span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 4: Projects -->
-        <section id="projects" class="section projects-section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2 class="section-title">Projects</h2>
-                    <div class="underline"></div>
-                </div>
-                
-                <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <div class="project-card reveal">
-                        <div class="project-banner">
-                            <span class="project-num">01</span>
-                            <div class="project-badge">Featured</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">BugBuster IDE</h3>
-                            <h4 class="project-subtitle">AI-Powered Multi-Language Development Environment</h4>
-                            <p class="project-desc">
-                                A full-stack intelligent IDE with automated error detection and fixes across multiple programming languages, powered by the DeepSeek Coder 1.3B ML model. Uses Spectrum-Based Fault Localization for automated patch generation, with a FastAPI REST backend and Docker containerization for reproducible execution.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">FastAPI</span>
-                                <span class="tag">Docker</span>
-                                <span class="tag">AI/ML</span>
-                                <span class="tag">JS</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/AMChethan" target="_blank" rel="noopener noreferrer" class="proj-btn outline-btn">
-                                    <i class="fa-brands fa-github"></i> Source Code
-                                </a>
-                                <a href="#" class="proj-btn fill-btn disabled" aria-disabled="true">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="project-card reveal">
-                        <div class="project-banner">
-                            <span class="project-num">02</span>
-                            <div class="project-badge">Live</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">YourStore</h3>
-                            <h4 class="project-subtitle">Responsive E-Commerce Website</h4>
-                            <p class="project-desc">
-                                A fully responsive e-commerce platform for browsing and purchasing electronic products including mobiles, laptops, TVs, gaming consoles, and headphones. Features a shopping cart, wishlist, order tracking, and a modern custom UI.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS3</span>
-                                <span class="tag">JavaScript</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/AMChethan/YourStore" target="_blank" rel="noopener noreferrer" class="proj-btn outline-btn">
-                                    <i class="fa-brands fa-github"></i> Source Code
-                                </a>
-                                <a href="https://amchethan.github.io/YourStore/" target="_blank" rel="noopener noreferrer" class="proj-btn fill-btn">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="project-card reveal">
-                        <div class="project-banner">
-                            <span class="project-num">03</span>
-                            <div class="project-badge">Python</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">AI-Powered Chatbot</h3>
-                            <h4 class="project-subtitle">NLP-Based Conversational Agent</h4>
-                            <p class="project-desc">
-                                A chatbot that understands user queries using Natural Language Processing, with intent recognition and context-aware response generation. Built using a full Python backend and JavaScript frontend integration.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">HTML5/CSS3</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">NLP</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/AMChethan" target="_blank" rel="noopener noreferrer" class="proj-btn outline-btn">
-                                    <i class="fa-brands fa-github"></i> Source Code
-                                </a>
-                                <a href="#" class="proj-btn fill-btn disabled" aria-disabled="true">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 5: Experience -->
-        <section id="experience" class="section experience-section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2 class="section-title">INTERNSHIP</h2>
-                    <div class="underline"></div>
-                </div>
-                
-                <div class="timeline-container">
-                    <div class="timeline-item reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-card-wrapper">
-                            <div class="timeline-header">
-                                <span class="timeline-date"><i class="fa-regular fa-calendar-days"></i> Jan 2026 – May 2026</span>
-                                <span class="timeline-badge">Training</span>
-                            </div>
-                            <h3 class="timeline-title">Java Full Stack Developer Training</h3>
-                            <h4 class="timeline-subtitle">QSpiders (Test Yantra Software Solutions), Mysore</h4>
-                            <p class="timeline-text">
-                                Trained rigorously in building end-to-end full-stack applications. Acquired deep knowledge and practical skills across core components:
-                            </p>
-                            <ul class="timeline-details-list">
-                                <li><strong>Java &amp; OOPs:</strong> Solid understanding of Object-Oriented Principles, Collections Framework, Multithreading, Exception Handling.</li>
-                                <li><strong>Frontend Tech:</strong> Built modern UI interfaces using ReactJS, HTML5, CSS3, JavaScript (ES6+), and asynchronous programming.</li>
-                                <li><strong>Backend &amp; DB:</strong> Covered Servlets, JDBC, REST API development, MySQL database design, CRUD operations, and relational mapping.</li>
-                                <li><strong>Workflows:</strong> Utilized Git for version control, collaborated on repositories, and followed clean code principles.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 6: Education -->
-        <section id="education" class="section education-section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2 class="section-title">Education</h2>
-                    <div class="underline"></div>
-                </div>
-                
-                <div class="education-grid">
-                    <!-- Education 1 -->
-                    <div class="education-card reveal">
-                        <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                        <span class="edu-duration">2022 – 2026</span>
-                        <h3 class="edu-degree">B.E. Computer Science &amp; Engineering</h3>
-                        <h4 class="edu-institution">Government Engineering College Chamarajanagara</h4>
-                        <div class="edu-result-badge">CGPA: 8.7 / 10</div>
-                    </div>
-
-                    <!-- Education 2 -->
-                    <div class="education-card reveal">
-                        <div class="edu-icon"><i class="fa-solid fa-school"></i></div>
-                        <span class="edu-duration">Class of 2022</span>
-                        <h3 class="edu-degree">PUC (Pre-University College)</h3>
-                        <h4 class="edu-institution">Sri Jayachamarajendra PU College, Mysore</h4>
-                        <div class="edu-result-badge">Score: 90.3%</div>
-                    </div>
-
-                    <!-- Education 3 -->
-                    <div class="education-card reveal">
-                        <div class="edu-icon"><i class="fa-solid fa-building-columns"></i></div>
-                        <span class="edu-duration">Class of 2020</span>
-                        <h3 class="edu-degree">10th Grade CBSE</h3>
-                        <h4 class="edu-institution">JSS Public School, Mysore</h4>
-                        <div class="edu-result-badge">Score: 87%</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 7: Certifications & Achievements -->
-        <section id="certifications" class="section certifications-section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2 class="section-title">Certifications &amp; Achievements</h2>
-                    <div class="underline"></div>
-                </div>
-                
-                <div class="certifications-grid">
-                    <!-- Cert 1 -->
-                    <div class="cert-card reveal">
-                        <div class="cert-icon-box">
-                            <i class="fa-solid fa-certificate"></i>
-                        </div>
-                        <div class="cert-content">
-                            <h3>Full Stack Development Certification</h3>
-                            <p class="cert-org">NoviTech Pvt. Ltd</p>
-                            <p class="cert-desc">Comprehensive certification validating expertise in building web applications from scratch, encompassing database design, REST interfaces, and client side views.</p>
-                        </div>
-                    </div>
-
-                    <!-- Cert 2 -->
-                    <div class="cert-card reveal">
-                        <div class="cert-icon-box">
-                            <i class="fa-solid fa-hands-holding-child"></i>
-                        </div>
-                        <div class="cert-content">
-                            <h3>Active Volunteer</h3>
-                            <p class="cert-org">Youth for Seva NGO</p>
-                            <p class="cert-desc">Dedicated volunteer contributing across domains: Education, Environment, Health, and Livelihood. Engaged in social impact initiatives, teaching drives, and clean-up programs.</p>
-                        </div>
-                    </div>
-
-                    <!-- Cert 3 -->
-                    <div class="cert-card reveal">
-                        <div class="cert-icon-box">
-                            <i class="fa-solid fa-award"></i>
-                        </div>
-                        <div class="cert-content">
-                            <h3>Seva Sadhaka Award</h3>
-                            <p class="cert-org">Youth for Seva</p>
-                            <p class="cert-desc">Awarded in recognition of outstanding commitment, hours of service, and leadership in driving social improvement programs within local communities.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 8: Contact -->
-        <section id="contact" class="section contact-section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2 class="section-title">Get In Touch</h2>
-                    <div class="underline"></div>
-                </div>
-                
-                <div class="contact-grid">
-                    <!-- Contact Info Side -->
-                    <div class="contact-info-card reveal">
-                        <h3 class="contact-card-title">Let's Connect</h3>
-                        <p class="contact-card-desc">
-                            I am actively seeking full-time roles as a Software Engineer / Java Full Stack Developer. Whether you have an opportunity, want to discuss a project, or just want to connect, reach out!
-                        </p>
-                        
-                        <div class="contact-details">
-                            <div class="contact-detail-item">
-                                <div class="item-icon"><i class="fa-solid fa-envelope"></i></div>
-                                <div>
-                                    <h4>Email Me</h4>
-                                    <p><a href="mailto:amchethan61@gmail.com">amchethan61@gmail.com</a></p>
-                                </div>
-                            </div>
-                            <div class="contact-detail-item">
-                                <div class="item-icon"><i class="fa-solid fa-phone"></i></div>
-                                <div>
-                                    <h4>Call Me</h4>
-                                    <p><a href="tel:+917483526212">+91 74835 26212</a></p>
-                                </div>
-                            </div>
-                            <div class="contact-detail-item">
-                                <div class="item-icon"><i class="fa-solid fa-location-dot"></i></div>
-                                <div>
-                                    <h4>Location</h4>
-                                    <p>Mysore, Karnataka, India</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-network">
-                            <h4>Find me on:</h4>
-                            <div class="network-icons">
-                                <a href="https://github.com/AMChethan" target="_blank" rel="noopener noreferrer" class="net-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                                <a href="https://www.linkedin.com/in/a-m-chethan" target="_blank" rel="noopener noreferrer" class="net-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Contact Form Side -->
-                    <div class="contact-form-card reveal">
-                        <form id="portfolio-contact-form">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="form-name">Your Name</label>
-                                    <input type="text" id="form-name" placeholder="John Doe" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="form-email">Your Email</label>
-                                    <input type="email" id="form-email" placeholder="john@example.com" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="form-subject">Subject</label>
-                                <input type="text" id="form-subject" placeholder="Opportunity details / Project proposal" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="form-message">Message</label>
-                                <textarea id="form-message" rows="6" placeholder="Hi Chethan, I'd like to talk about..." required></textarea>
-                            </div>
-                            
-                            <button type="submit" class="submit-btn" id="submit-btn">
-                                <span class="btn-text">Send Message</span>
-                                <span class="btn-icon"><i class="fa-solid fa-paper-plane"></i></span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer-container">
-        <div class="footer-content">
-            <div class="footer-socials">
-                <a href="https://github.com/AMChethan" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/a-m-chethan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="mailto:amchethan61@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-                <a href="tel:+917483526212" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
-            </div>
-            <p class="footer-text">
-                Designed by A M Chethan
-            </p>
-            <p class="footer-copyright">
-                &copy; 2026. All rights reserved.
-            </p>
+          </div>
         </div>
-    </footer>
 
-    <!-- Toast notification container for form feedback -->
-    <div id="toast-container" class="toast-container"></div>
+        <!-- Verified LinkedIn Experience & Dual Drive Grid -->
+        <div class="vol-showcase-container">
+          <div class="vol-showcase-header">
+            <div class="showcase-title-col">
+              <span class="gallery-badge">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                Verified LinkedIn Experience
+              </span>
+              <h3 class="showcase-heading">On-Ground Impact Chronicles & Photos</h3>
+            </div>
 
-    <!-- Resume Download Modal / PDF Generation Helper -->
-    <div id="download-resume-btn" style="display:none;"></div>
+            <!-- Tab Switcher, Nav Arrows & LinkedIn Button -->
+            <div class="gallery-actions-group">
+              <div class="vol-tabs-nav" role="tablist">
+                <button class="vol-tab-btn active" data-tab="all" onclick="switchVolTab('all')">Show All Drives</button>
+                <button class="vol-tab-btn" data-tab="nmms" onclick="switchVolTab('nmms')">📚 NMMS Coaching</button>
+                <button class="vol-tab-btn" data-tab="skd" onclick="switchVolTab('skd')">🎒 School Kit Drive</button>
+                <button class="vol-tab-btn" data-tab="rathotsava" onclick="switchVolTab('rathotsava')">🏛️ Rathotsava</button>
+              </div>
 
-    <!-- Script File -->
-    <script src="script.js"></script>
+              <!-- Carousel Arrow Navigation & Auto-Scroll Controls -->
+              <div class="vol-carousel-arrows">
+                <button class="vol-nav-btn prev" id="volScrollPrev" onclick="scrollVolCards(-1)" aria-label="Scroll cards left" title="Previous story">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button class="vol-autoplay-btn" id="volAutoplayBtn" onclick="toggleVolAutoplay()" aria-label="Toggle auto-scroll" title="Automatic slow scroll is active. Click to pause or resume.">
+                  <span class="autoplay-pulse-dot"></span>
+                  <span class="autoplay-text" id="volAutoplayText">Auto-Scroll</span>
+                </button>
+                <button class="vol-nav-btn next" id="volScrollNext" onclick="scrollVolCards(1)" aria-label="Scroll cards right" title="Next story">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+
+              <a href="https://www.linkedin.com/in/a-m-chethan/recent-activity/all/" target="_blank" rel="noopener noreferrer" class="gallery-linkedin-link" title="Open full posts on LinkedIn">
+                <span>View on LinkedIn</span>
+                <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Horizontal Scrolling Cards Section with Smooth Slow Movement -->
+          <div class="vol-carousel-wrapper">
+            <div class="vol-horizontal-track" id="volCardsTrack">
+
+              <!-- Card 1: NMMS Competitive Scholarship Classroom Coaching -->
+              <article class="vol-story-card vol-tab-content" data-tab-panel="nmms">
+                <div class="vol-card-img-wrap" data-tilt="true" onclick="openVolModal('images/volunteering-nmms-projector.jpg', 'Chethan Conducting Interactive NMMS Scholarship Class for Govt School Children with Digital Projector')">
+                  <div class="photo-glare"></div>
+                  <span class="hud-bracket top-left"></span>
+                  <span class="hud-bracket top-right"></span>
+                  <span class="hud-bracket bottom-left"></span>
+                  <span class="hud-bracket bottom-right"></span>
+                  <div class="hud-crosshair"></div>
+                  <div class="photo-hud-tag">
+                    <span class="hud-rec-dot"></span>
+                    <span class="hud-text">NMMS CLASSROOM • MAT REASONING</span>
+                  </div>
+                  <img src="images/volunteering-nmms-projector.jpg" alt="Chethan teaching NMMS competitive scholarship class for government school children" loading="lazy">
+                  <div class="vol-photo-overlay">
+                    <span class="overlay-title">🖥️ Interactive NMMS Scholarship Class</span>
+                    <span class="overlay-zoom">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                      <span>Enlarge HD</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="vol-card-body">
+                  <div class="vol-card-category">Govt School Education • NMMS Scheme</div>
+                  <h4 class="vol-card-headline">Empowering Govt School Scholars.</h4>
+                  <p class="vol-card-desc">
+                    Conducting specialized National Means-cum-Merit Scholarship (NMMS) classes for 8th-grade government school students, teaching Mental Ability Tests (MAT), pattern decoding, and alphabet reasoning.
+                  </p>
+                  <div class="vol-card-meta-row">
+                    <span class="vol-meta-reaction">📚 50+ Students Coached</span>
+                    <span class="vol-meta-view" onclick="openVolModal('images/volunteering-nmms-projector.jpg', 'Chethan Conducting Interactive NMMS Scholarship Class for Govt School Children with Digital Projector')">Inspect Shot ↗</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 2: Chalkboard Mathematics & Problem Solving -->
+              <article class="vol-story-card vol-tab-content" data-tab-panel="nmms">
+                <div class="vol-card-img-wrap" data-tilt="true" onclick="openVolModal('images/volunteering-nmms-math.jpg', 'Chethan Teaching Math & Equations on Chalkboard for NMMS Aspirants at Government School')">
+                  <div class="photo-glare"></div>
+                  <span class="hud-bracket top-left"></span>
+                  <span class="hud-bracket top-right"></span>
+                  <span class="hud-bracket bottom-left"></span>
+                  <span class="hud-bracket bottom-right"></span>
+                  <div class="hud-crosshair"></div>
+                  <div class="photo-hud-tag">
+                    <span class="hud-rec-dot"></span>
+                    <span class="hud-text">ON-BOARD TEACHING • MATH & SAT</span>
+                  </div>
+                  <img src="images/volunteering-nmms-math.jpg" alt="Chethan teaching mathematics and problem-solving on chalkboard for government school students" loading="lazy">
+                  <div class="vol-photo-overlay">
+                    <span class="overlay-title">✏️ Chalkboard Math & Problem Solving</span>
+                    <span class="overlay-zoom">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                      <span>Enlarge HD</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="vol-card-body">
+                  <div class="vol-card-category">Direct Mentorship • Scholastic Aptitude</div>
+                  <h4 class="vol-card-headline">Breaking Down Complex Math.</h4>
+                  <p class="vol-card-desc">
+                    Guiding students through step-by-step arithmetic equations, speed-math tricks, and competitive examination shortcuts on the chalkboard to build foundational confidence and academic curiosity.
+                  </p>
+                  <div class="vol-card-meta-row">
+                    <span class="vol-meta-reaction">📐 SAT & Quantitative Aptitude</span>
+                    <span class="vol-meta-view" onclick="openVolModal('images/volunteering-nmms-math.jpg', 'Chethan Teaching Math & Equations on Chalkboard for NMMS Aspirants at Government School')">Inspect Shot ↗</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 3: 100+ School Kits Gifted -->
+              <article class="vol-story-card vol-tab-content" data-tab-panel="skd">
+                <div class="vol-card-img-wrap" data-tilt="true" onclick="openVolModal('images/volunteering-skd-main.jpg', 'School Kit Distribution (SKD) Drive — School Students & Volunteers with new kits')">
+                  <div class="photo-glare"></div>
+                  <span class="hud-bracket top-left"></span>
+                  <span class="hud-bracket top-right"></span>
+                  <span class="hud-bracket bottom-left"></span>
+                  <span class="hud-bracket bottom-right"></span>
+                  <div class="hud-crosshair"></div>
+                  <div class="photo-hud-tag">
+                    <span class="hud-rec-dot"></span>
+                    <span class="hud-text">SKD DRIVE • TEXAS INSTRUMENTS</span>
+                  </div>
+                  <img src="images/volunteering-skd-main.jpg" alt="School Kit Distribution Drive with School Children and Volunteers" loading="lazy">
+                  <div class="vol-photo-overlay">
+                    <span class="overlay-title">🎒 Govt School Assembly</span>
+                    <span class="overlay-zoom">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                      <span>Enlarge HD</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="vol-card-body">
+                  <div class="vol-card-category">Youth For Seva × Texas Instruments</div>
+                  <h4 class="vol-card-headline">100+ School Kits Gifted.</h4>
+                  <p class="vol-card-desc">
+                    Empowered over 100 rural government school students with comprehensive Texas Instruments educational kits, backpacks, and classroom supplies across rural belts.
+                  </p>
+                  <div class="vol-card-meta-row">
+                    <span class="vol-meta-reaction">👍 ❤️ 23+ Reactions</span>
+                    <span class="vol-meta-view" onclick="openVolModal('images/volunteering-skd-main.jpg', 'School Kit Distribution (SKD) Drive — School Students & Volunteers with new kits')">Inspect Shot ↗</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 2: Direct Student Mentorship -->
+              <article class="vol-story-card vol-tab-content" data-tab-panel="skd">
+                <div class="vol-card-img-wrap" data-tilt="true" onclick="openVolModal('images/volunteering-skd-chethan.jpg', 'Chethan with Young Students receiving their Texas Instruments School Kits')">
+                  <div class="photo-glare"></div>
+                  <span class="hud-bracket top-left"></span>
+                  <span class="hud-bracket top-right"></span>
+                  <span class="hud-bracket bottom-left"></span>
+                  <span class="hud-bracket bottom-right"></span>
+                  <div class="photo-hud-tag mini">
+                    <span class="hud-rec-dot"></span>
+                    <span class="hud-text">ON-SITE DISPATCH</span>
+                  </div>
+                  <img src="images/volunteering-skd-chethan.jpg" alt="Chethan with young students and school kits" loading="lazy">
+                  <div class="vol-photo-overlay">
+                    <span class="overlay-title">📸 Chethan with Students</span>
+                    <span class="overlay-zoom">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                      <span>Enlarge HD</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="vol-card-body">
+                  <div class="vol-card-category">Direct Mentorship & Service</div>
+                  <h4 class="vol-card-headline">Direct Student Mentorship.</h4>
+                  <p class="vol-card-desc">
+                    <em>"The best way to find yourself is to lose yourself in the service of others."</em> Engaging one-on-one with young students to ignite confidence and curiosity.
+                  </p>
+                  <div class="vol-card-meta-row">
+                    <span class="vol-meta-reaction">🎒 Texas Instruments Kits</span>
+                    <span class="vol-meta-view" onclick="openVolModal('images/volunteering-skd-chethan.jpg', 'Chethan with Young Students receiving their Texas Instruments School Kits')">Inspect Shot ↗</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 3: On-Site Volunteer Execution -->
+              <article class="vol-story-card vol-tab-content" data-tab-panel="skd">
+                <div class="vol-card-img-wrap" data-tilt="true" onclick="openVolModal('images/volunteering-skd-team.jpg', 'Youth For Seva Volunteer Team at the School Grounds')">
+                  <div class="photo-glare"></div>
+                  <span class="hud-bracket top-left"></span>
+                  <span class="hud-bracket top-right"></span>
+                  <span class="hud-bracket bottom-left"></span>
+                  <span class="hud-bracket bottom-right"></span>
+                  <div class="photo-hud-tag mini">
+                    <span class="hud-rec-dot"></span>
+                    <span class="hud-text">VOLUNTEER SQUAD</span>
+                  </div>
+                  <img src="images/volunteering-skd-team.jpg" alt="Youth For Seva Volunteer Team at the School" loading="lazy">
+                  <div class="vol-photo-overlay">
+                    <span class="overlay-title">👥 Volunteer Squad On-Site</span>
+                    <span class="overlay-zoom">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                      <span>Enlarge HD</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="vol-card-body">
+                  <div class="vol-card-category">Ground Logistics & Ops</div>
+                  <h4 class="vol-card-headline">On-Site Field Operations.</h4>
+                  <p class="vol-card-desc">
+                    Directing on-ground volunteer squads, staging logistics, supply inventory, and student crowd management for a frictionless school-wide kit handout.
+                  </p>
+                  <div class="vol-card-meta-row">
+                    <span class="vol-meta-reaction">👥 Core Volunteer Squad</span>
+                    <span class="vol-meta-view" onclick="openVolModal('images/volunteering-skd-team.jpg', 'Youth For Seva Volunteer Team at the School Grounds')">Inspect Shot ↗</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 4: 60 Dedicated Volunteers -->
+              <article class="vol-story-card vol-tab-content" data-tab-panel="rathotsava">
+                <div class="vol-card-img-wrap" data-tilt="true" onclick="openVolModal('images/volunteering-rathotsava-team.jpg', '60 Dedicated Youth For Seva Volunteers at Chamarajeshwara Temple')">
+                  <div class="photo-glare"></div>
+                  <span class="hud-bracket top-left"></span>
+                  <span class="hud-bracket top-right"></span>
+                  <span class="hud-bracket bottom-left"></span>
+                  <span class="hud-bracket bottom-right"></span>
+                  <div class="hud-crosshair"></div>
+                  <div class="photo-hud-tag">
+                    <span class="hud-rec-dot"></span>
+                    <span class="hud-text">60 VOLUNTEERS • TEMPLE DEPLOYMENT</span>
+                  </div>
+                  <img src="images/volunteering-rathotsava-team.jpg" alt="60 Dedicated Volunteers from Youth For Seva Chamarajanagara" loading="lazy">
+                  <div class="vol-photo-overlay">
+                    <span class="overlay-title">🏛️ 60 Dedicated Volunteers</span>
+                    <span class="overlay-zoom">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                      <span>Enlarge HD</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="vol-card-body">
+                  <div class="vol-card-category">Youth For Seva × Karnataka Police</div>
+                  <h4 class="vol-card-headline">60 Dedicated Volunteers.</h4>
+                  <p class="vol-card-desc">
+                    Mobilized and deployed a 60-strong volunteer contingent across the historic Chamarajeshwara Temple festival, guiding tens of thousands of pilgrims safely.
+                  </p>
+                  <div class="vol-card-meta-row">
+                    <span class="vol-meta-reaction">👍 💚 9+ Reactions • 293+ Views</span>
+                    <span class="vol-meta-view" onclick="openVolModal('images/volunteering-rathotsava-team.jpg', '60 Dedicated Youth For Seva Volunteers at Chamarajeshwara Temple')">Inspect Shot ↗</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 5: Police Coordination & Safety -->
+              <article class="vol-story-card vol-tab-content" data-tab-panel="rathotsava">
+                <div class="vol-card-img-wrap" data-tilt="true" onclick="openVolModal('images/volunteering-rathotsava-service.jpg', 'Crowd Management, Police Coordination & Service Highlights')">
+                  <div class="photo-glare"></div>
+                  <span class="hud-bracket top-left"></span>
+                  <span class="hud-bracket top-right"></span>
+                  <span class="hud-bracket bottom-left"></span>
+                  <span class="hud-bracket bottom-right"></span>
+                  <div class="hud-crosshair"></div>
+                  <div class="photo-hud-tag">
+                    <span class="hud-rec-dot"></span>
+                    <span class="hud-text">SPECIAL FORCES • POLICE COORD</span>
+                  </div>
+                  <img src="images/volunteering-rathotsava-service.jpg" alt="Volunteering Service highlights and crowd management" loading="lazy">
+                  <div class="vol-photo-overlay">
+                    <span class="overlay-title">👮 Crowd Safety & Police Coordination</span>
+                    <span class="overlay-zoom">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                      <span>Enlarge HD</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="vol-card-body">
+                  <div class="vol-card-category">Crisis Management & Safety</div>
+                  <h4 class="vol-card-headline">Police Coordination & Safety.</h4>
+                  <p class="vol-card-desc">
+                    Collaborated in close multi-agency sync with Karnataka Police Department across crowd management, security barricades, and medical emergency flow.
+                  </p>
+                  <div class="vol-card-meta-row">
+                    <span class="vol-meta-reaction">👮 Special Forces Coordination</span>
+                    <span class="vol-meta-view" onclick="openVolModal('images/volunteering-rathotsava-service.jpg', 'Crowd Management, Police Coordination & Service Highlights')">Inspect Shot ↗</span>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+
+            <!-- Horizontal Scroll Progress Indicator Bar -->
+            <div class="vol-scroll-progress-wrap">
+              <div class="vol-scroll-progress-bar" id="volScrollProgressBar"></div>
+            </div>
+          </div>
+
+          <!-- Demonstrated Leadership Competencies Footer -->
+          <div class="vol-skills-footer">
+            <span class="skills-footer-title">Demonstrated Leadership Arsenal:</span>
+            <div class="skills-footer-tags">
+              <span class="tech-tag highlight">"Seva Sadhaka" NGO Award</span>
+              <span class="tech-tag highlight">NMMS Scholarship Coaching</span>
+              <span class="tech-tag">Govt School Mentorship</span>
+              <span class="tech-tag">Volunteer Mobilization</span>
+              <span class="tech-tag">Multi-Agency Collaboration</span>
+              <span class="tech-tag">Crisis & Crowd Safety</span>
+              <span class="tech-tag">Empathetic Leadership</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =================================================================
+         TECHNICAL ARSENAL & SKILLS BENTO GRID
+         ================================================================= -->
+    <section class="skills-section" id="skills">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-label">TECHNICAL COMPETENCIES</span>
+          <h2 class="section-title">
+            The Engineer's <span class="section-title-highlight">Arsenal</span>
+          </h2>
+          <p class="section-desc">
+            A comprehensive overview of programming languages, frameworks, AI integrations, and tools in Chethan's daily workflow.
+          </p>
+        </div>
+
+        <div class="skills-bento-grid">
+
+          <!-- Card 1: Programming Languages -->
+          <div class="skills-card">
+            <div class="skills-card-header">
+              <div class="skills-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <h3 class="skills-card-title">Programming Languages</h3>
+            </div>
+            <div class="skills-tag-cloud">
+              <span class="skill-pill">☕ Java (Core & Advanced)</span>
+              <span class="skill-pill">🐍 Python</span>
+              <span class="skill-pill">⚙️ C Language</span>
+              <span class="skill-pill">⚡ JavaScript (ES6+)</span>
+              <span class="skill-pill">🗄️ SQL</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Backend & Microservices -->
+          <div class="skills-card">
+            <div class="skills-card-header">
+              <div class="skills-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+              </div>
+              <h3 class="skills-card-title">Backend Architecture</h3>
+            </div>
+            <div class="skills-tag-cloud">
+              <span class="skill-pill">🟢 Node.js</span>
+              <span class="skill-pill">⚡ Express.js</span>
+              <span class="skill-pill">🍃 Spring Boot</span>
+              <span class="skill-pill">🌱 Spring Framework</span>
+              <span class="skill-pill">🌐 RESTful APIs</span>
+              <span class="skill-pill">🔌 JDBC & CRUD</span>
+            </div>
+          </div>
+
+          <!-- Card 3: AI & Machine Learning -->
+          <div class="skills-card">
+            <div class="skills-card-header">
+              <div class="skills-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M12 6v6l4 2"></path></svg>
+              </div>
+              <h3 class="skills-card-title">AI & ML Systems</h3>
+            </div>
+            <div class="skills-tag-cloud">
+              <span class="skill-pill">🤖 DeepSeek Coder 1.3B</span>
+              <span class="skill-pill">🧠 NLP (Natural Language Processing)</span>
+              <span class="skill-pill">🎯 Intent Recognition</span>
+              <span class="skill-pill">🔍 Fault Localization (SBFL)</span>
+              <span class="skill-pill">🧩 AI/ML API Integration</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Frontend Development -->
+          <div class="skills-card">
+            <div class="skills-card-header">
+              <div class="skills-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              </div>
+              <h3 class="skills-card-title">Frontend Engineering</h3>
+            </div>
+            <div class="skills-tag-cloud">
+              <span class="skill-pill">⚛️ ReactJS</span>
+              <span class="skill-pill">🌐 HTML5 Semantic Web</span>
+              <span class="skill-pill">🎨 CSS3 & Glassmorphism</span>
+              <span class="skill-pill">📱 Responsive Design</span>
+              <span class="skill-pill">✨ Micro-animations</span>
+            </div>
+          </div>
+
+          <!-- Card 5: Databases & DevOps -->
+          <div class="skills-card">
+            <div class="skills-card-header">
+              <div class="skills-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+              </div>
+              <h3 class="skills-card-title">Databases & DevOps</h3>
+            </div>
+            <div class="skills-tag-cloud">
+              <span class="skill-pill">🐬 MySQL</span>
+              <span class="skill-pill">🐳 Docker Containers</span>
+              <span class="skill-pill">🐙 Git & GitHub</span>
+              <span class="skill-pill">💻 VS Code & Eclipse</span>
+              <span class="skill-pill">🛡️ Linux / Terminal</span>
+            </div>
+          </div>
+
+          <!-- Card 6: Computer Science Core -->
+          <div class="skills-card">
+            <div class="skills-card-header">
+              <div class="skills-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </div>
+              <h3 class="skills-card-title">Computer Science Core</h3>
+            </div>
+            <div class="skills-tag-cloud">
+              <span class="skill-pill">📐 Data Structures & Algorithms</span>
+              <span class="skill-pill">🧱 OOP (Object-Oriented Design)</span>
+              <span class="skill-pill">🗃️ DBMS Architecture</span>
+              <span class="skill-pill">🖥️ Operating Systems</span>
+              <span class="skill-pill">💡 Problem Solving & Teamwork</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         CONTACT & INQUIRY SECTION (Gupio Slogan + Form)
+         ================================================================= -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        
+        <div class="contact-layout">
+          
+          <!-- Contact Left Narrative -->
+          <div>
+            <span class="section-label">GET IN TOUCH</span>
+            <h2 class="contact-slogan">
+              Ready to engineer <br>
+              <span class="contact-slogan-accent">What's Next?</span>
+            </h2>
+
+            <p class="contact-lead-text">
+              Whether you are looking to hire a dedicated Software Engineer, explore collaboration on AI-driven systems, or discuss enterprise full-stack opportunities, feel free to reach out directly.
+            </p>
+
+            <div class="contact-info-list">
+              
+              <!-- Email Card -->
+              <div class="contact-info-card" id="emailCard" style="cursor: pointer;" title="Click to copy email address">
+                <div class="contact-icon-bubble">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                </div>
+                <div>
+                  <div class="contact-card-label">Email Address (Click to Copy)</div>
+                  <div class="contact-card-val" id="emailVal">amchethan61@gmail.com</div>
+                </div>
+              </div>
+
+              <!-- Phone Card -->
+              <div class="contact-info-card" id="phoneCard" style="cursor: pointer;" title="Click to copy phone number">
+                <div class="contact-icon-bubble">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <div>
+                  <div class="contact-card-label">Direct Phone</div>
+                  <div class="contact-card-val" id="phoneVal">+91-7483526212</div>
+                </div>
+              </div>
+
+              <!-- Location Card -->
+              <div class="contact-info-card">
+                <div class="contact-icon-bubble">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div>
+                  <div class="contact-card-label">Location</div>
+                  <div class="contact-card-val">Mysuru & Chamarajanagara, Karnataka, India</div>
+                </div>
+              </div>
+
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: center;">
+              <a href="chethan_resume.pdf" target="_blank" class="gupio-yellow-btn">
+                <span>Download Resume (PDF)</span>
+                <span class="btn-indicator">
+                  <span class="indicator-circle">
+                    <svg viewBox="0 0 16 16" fill="none">
+                      <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Right: Interactive Message Box -->
+          <div class="contact-form-box">
+            <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.5rem; color: #fff;">Send Direct Message</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 2rem;">
+              Fill in your inquiry and Chethan will connect back with you within 24 hours.
+            </p>
+
+            <div class="form-notification" id="formNotification">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Thank you! Your message has been simulated and sent successfully to Chethan.</span>
+            </div>
+
+            <form id="contactForm" action="https://formsubmit.co/amchethan61@gmail.com" method="POST">
+              <!-- FormSubmit Direct Email Configuration -->
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_autoresponse" value="Thank you for contacting A M Chethan. Your message has been received, and Chethan will reply within 24 hours.">
+
+              <div class="form-group">
+                <label for="contactName" class="form-label">Full Name</label>
+                <input type="text" id="contactName" name="name" class="form-input" placeholder="e.g. Rahul Sharma" required autocomplete="name">
+              </div>
+
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">Work / Personal Email</label>
+                <input type="email" id="contactEmail" name="email" class="form-input" placeholder="e.g. rahul@company.com" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label for="contactSubject" class="form-label">Subject</label>
+                <input type="text" id="contactSubject" name="_subject" class="form-input" placeholder="e.g. Software Engineering Opportunity / Collaboration" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMessage" class="form-label">Message</label>
+                <textarea id="contactMessage" name="message" class="form-textarea" placeholder="Describe the role or your project requirements..." required rows="5"></textarea>
+              </div>
+
+              <button type="submit" id="contactSubmitBtn" class="gupio-yellow-btn" style="width: 100%; justify-content: center;">
+                <span id="submitBtnText">Send Dispatch to Chethan</span>
+                <span class="btn-indicator">
+                  <span class="indicator-circle">
+                    <svg viewBox="0 0 16 16" fill="none">
+                      <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </span>
+              </button>
+
+              <div class="contact-direct-privacy">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <span>Direct delivery to <strong>amchethan61@gmail.com</strong> in real time</span>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =================================================================
+       FOOTER (Inspired by Gupio Footer Structure)
+       ================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-top-grid">
+        
+        <div>
+          <h2 class="footer-brand-title">Engineered For <br>Scale & Precision</h2>
+          <p class="footer-brand-desc">
+            Bridging distributed Java backends, reactive web applications, and autonomous AI systems.
+          </p>
+
+          <div class="footer-social-row">
+            <a href="https://www.linkedin.com/in/a-m-chethan" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+            <a href="https://github.com/AMChethan" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+            <a href="mailto:amchethan61@gmail.com" class="social-circle-btn" aria-label="Direct Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">NAVIGATION</h3>
+          <ul class="footer-nav-links">
+            <li><a href="#hero" class="footer-nav-link">Overview & Portrait</a></li>
+            <li><a href="#pillars" class="footer-nav-link">Engineering Philosophy</a></li>
+            <li><a href="#projects" class="footer-nav-link">Featured Projects</a></li>
+            <li><a href="#terminal" class="footer-nav-link">Interactive AI Terminal</a></li>
+            <li><a href="#timeline" class="footer-nav-link">Experience & Education</a></li>
+            <li><a href="#volunteering" class="footer-nav-link">Youth For Seva Impact</a></li>
+            <li><a href="#skills" class="footer-nav-link">Skills Arsenal</a></li>
+            <li><a href="#contact" class="footer-nav-link">Contact & Connect</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">PROJECT ARTIFACTS</h3>
+          <ul class="footer-nav-links">
+            <li><a href="#projects" class="footer-nav-link">BugBuster IDE (DeepSeek AI)</a></li>
+            <li><a href="#projects" class="footer-nav-link">MediUnify Healthcare Portal</a></li>
+            <li><a href="https://amchethan.github.io/YourStore/" target="_blank" rel="noopener noreferrer" class="footer-nav-link">YourStore E-Commerce (Live Demo ↗)</a></li>
+            <li><a href="#projects" class="footer-nav-link">AI NLP Chatbot Engine</a></li>
+            <li><a href="chethan_resume.pdf" target="_blank" class="footer-nav-link">Download Resume (PDF)</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="footer-copy">
+          © 2026 A M Chethan. Engineered with modern architectural precision. Built for excellence.
+        </p>
+        <div class="footer-status-tag">
+          🟢 Available for High-Impact Software Engineering Roles
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Volunteering Photo Lightbox Modal -->
+  <div class="vol-lightbox-modal" id="volLightboxModal" onclick="closeVolModal(event)">
+    <div class="vol-lightbox-content" onclick="event.stopPropagation()">
+      <button class="vol-lightbox-close" onclick="closeVolModal()" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <img id="volLightboxImg" src="" alt="Volunteering Photo Full Preview">
+      <div class="vol-lightbox-caption" id="volLightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification element -->
+  <div class="toast-notice" id="toastNotice">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toastMsg">Copied to clipboard!</span>
+  </div>
+
+  <!-- GSAP & ScrollTrigger (Exact engine used on Gupio for card deck stacking & pinning) -->
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  
+  <!-- JavaScript -->
+  <script src="app.js"></script>
 </body>
 </html>
-rebuild
