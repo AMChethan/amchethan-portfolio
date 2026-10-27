@@ -1254,10 +1254,8 @@ button {
   position: relative;
   background-color: var(--bg-darker);
   background-image: 
-    radial-gradient(circle at 50% 0%, var(--accent-glow) 0%, transparent 60%),
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 100% 100%, 36px 36px, 36px 36px;
+    radial-gradient(circle at 50% 0%, var(--accent-glow) 0%, transparent 70%);
+  background-size: 100% 100%;
   color: var(--text-white);
   overflow: visible; /* Enables native position:sticky to stick smoothly relative to viewport */
   border-top: 1px solid rgba(255, 255, 255, 0.06);

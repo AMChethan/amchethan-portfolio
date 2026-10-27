@@ -1273,7 +1273,7 @@ Qualifications:
   });
 
   // =========================================================================
-  // 16. SMART NEURAL GRID (HYBRID GLOBAL BACKGROUND ANIMATION)
+  // 16. ETHEREAL FLUID SMOKE (GLOBAL VOLUMETRIC BACKGROUND ENGINE)
   // =========================================================================
   const bgCanvas = document.getElementById('smartBgCanvas');
   if (bgCanvas && bgCanvas.getContext) {
@@ -1284,191 +1284,285 @@ Qualifications:
     let animFrameId = null;
     let isVisible = true;
 
-    // Mouse Spotlight & Magnetic Position
-    const mouse = {
-      x: -1000,
-      y: -1000,
-      targetX: -1000,
-      targetY: -1000,
-      radius: 260,
-      active: false
-    };
+    // Theme Colors with smooth interpolation
+    let targetPrimary = { r: 0, g: 245, b: 160 }; // Default Cyber Emerald
+    let targetSecondary = { r: 0, g: 210, b: 223 }; // Cyber Cyan
+    let curPrimary = { r: 0, g: 245, b: 160 };
+    let curSecondary = { r: 0, g: 210, b: 223 };
 
-    // Mobile ambient wandering spotlight (for touch devices)
-    let wanderingAngle = 0;
-
-    // Grid Configuration
-    const gridSize = 68; // distance between grid lines in CSS pixels
-    
-    // Theme color cache
-    let themeEmerald = { r: 16, g: 185, b: 129 };
-    let themeCyan = { r: 0, g: 229, b: 255 };
-
-    function updateThemeColors() {
-      const style = getComputedStyle(document.documentElement);
-      const primaryHex = style.getPropertyValue('--accent-primary').trim() || '#10b981';
-      if (primaryHex.startsWith('#')) {
-        let hex = primaryHex.slice(1);
+    function parseColor(hexStr, fallback) {
+      if (!hexStr) return fallback;
+      hexStr = hexStr.trim();
+      if (hexStr.startsWith('#')) {
+        let hex = hexStr.slice(1);
         if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
         const num = parseInt(hex, 16);
-        themeEmerald = {
+        return {
           r: (num >> 16) & 255,
           g: (num >> 8) & 255,
           b: num & 255
         };
       }
+      return fallback;
+    }
+
+    function updateThemeColors() {
+      const style = getComputedStyle(document.documentElement);
+      const pri = style.getPropertyValue('--accent-primary');
+      const sec = style.getPropertyValue('--accent-secondary');
+      targetPrimary = parseColor(pri, { r: 0, g: 245, b: 160 });
+      targetSecondary = parseColor(sec, { r: 0, g: 210, b: 223 });
     }
     updateThemeColors();
 
-    // Listen to theme changes
     const themeObserver = new MutationObserver(() => {
       updateThemeColors();
     });
     themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
-    // Neural Synapse Particles
-    const particles = [];
-    const particleCount = window.innerWidth < 768 ? 26 : 52;
-    const maxConnectDist = 115;
-    const maxConnectDistSq = maxConnectDist * maxConnectDist;
-    const mouseConnectDist = 165;
-    const mouseConnectDistSq = mouseConnectDist * mouseConnectDist;
+    // Pre-rendered Volumetric Smoke Stamps (Offscreen Canvases for 60 FPS GPU texture blitting)
+    const stampSize = 256;
+    const stamps = {
+      primaryPuff: document.createElement('canvas'),
+      secondaryPuff: document.createElement('canvas'),
+      primaryWisp: document.createElement('canvas'),
+      secondaryWisp: document.createElement('canvas'),
+      darkShadow: document.createElement('canvas')
+    };
 
-    class Particle {
-      constructor() {
-        this.reset(true);
+    Object.values(stamps).forEach(c => {
+      c.width = stampSize;
+      c.height = stampSize;
+    });
+
+    function bakeStamps(c1, c2) {
+      const half = stampSize / 2;
+
+      // 1. Primary Soft Billow Puff
+      const ctx1 = stamps.primaryPuff.getContext('2d');
+      ctx1.clearRect(0, 0, stampSize, stampSize);
+      const grad1 = ctx1.createRadialGradient(half, half, 0, half, half, half);
+      grad1.addColorStop(0, `rgba(${c1.r}, ${c1.g}, ${c1.b}, 0.28)`);
+      grad1.addColorStop(0.35, `rgba(${c1.r}, ${c1.g}, ${c1.b}, 0.16)`);
+      grad1.addColorStop(0.65, `rgba(${c1.r}, ${c1.g}, ${c1.b}, 0.05)`);
+      grad1.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx1.fillStyle = grad1;
+      ctx1.beginPath();
+      ctx1.arc(half, half, half, 0, Math.PI * 2);
+      ctx1.fill();
+
+      // 2. Secondary Billow Puff
+      const ctx2 = stamps.secondaryPuff.getContext('2d');
+      ctx2.clearRect(0, 0, stampSize, stampSize);
+      const grad2 = ctx2.createRadialGradient(half, half, 0, half, half, half);
+      grad2.addColorStop(0, `rgba(${c2.r}, ${c2.g}, ${c2.b}, 0.26)`);
+      grad2.addColorStop(0.38, `rgba(${c2.r}, ${c2.g}, ${c2.b}, 0.14)`);
+      grad2.addColorStop(0.7, `rgba(${c2.r}, ${c2.g}, ${c2.b}, 0.04)`);
+      grad2.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx2.fillStyle = grad2;
+      ctx2.beginPath();
+      ctx2.arc(half, half, half, 0, Math.PI * 2);
+      ctx2.fill();
+
+      // 3. Primary Wispy Asymmetrical Smoke Wisp
+      const ctx3 = stamps.primaryWisp.getContext('2d');
+      ctx3.clearRect(0, 0, stampSize, stampSize);
+      const g3a = ctx3.createRadialGradient(half * 0.8, half * 0.9, 0, half * 0.8, half * 0.9, half * 0.7);
+      g3a.addColorStop(0, `rgba(${c1.r}, ${c1.g}, ${c1.b}, 0.22)`);
+      g3a.addColorStop(0.5, `rgba(${c1.r}, ${c1.g}, ${c1.b}, 0.08)`);
+      g3a.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx3.fillStyle = g3a;
+      ctx3.beginPath();
+      ctx3.arc(half * 0.8, half * 0.9, half * 0.7, 0, Math.PI * 2);
+      ctx3.fill();
+
+      const g3b = ctx3.createRadialGradient(half * 1.25, half * 1.15, 0, half * 1.25, half * 1.15, half * 0.55);
+      g3b.addColorStop(0, `rgba(${c1.r}, ${c1.g}, ${c1.b}, 0.16)`);
+      g3b.addColorStop(0.6, `rgba(${c1.r}, ${c1.g}, ${c1.b}, 0.04)`);
+      g3b.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx3.fillStyle = g3b;
+      ctx3.beginPath();
+      ctx3.arc(half * 1.25, half * 1.15, half * 0.55, 0, Math.PI * 2);
+      ctx3.fill();
+
+      // 4. Secondary Wispy Tendril
+      const ctx4 = stamps.secondaryWisp.getContext('2d');
+      ctx4.clearRect(0, 0, stampSize, stampSize);
+      const g4a = ctx4.createRadialGradient(half * 1.1, half * 0.8, 0, half * 1.1, half * 0.8, half * 0.65);
+      g4a.addColorStop(0, `rgba(${c2.r}, ${c2.g}, ${c2.b}, 0.20)`);
+      g4a.addColorStop(0.5, `rgba(${c2.r}, ${c2.g}, ${c2.b}, 0.06)`);
+      g4a.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx4.fillStyle = g4a;
+      ctx4.beginPath();
+      ctx4.arc(half * 1.1, half * 0.8, half * 0.65, 0, Math.PI * 2);
+      ctx4.fill();
+
+      // 5. Deep Atmospheric Shadow Haze
+      const ctx5 = stamps.darkShadow.getContext('2d');
+      ctx5.clearRect(0, 0, stampSize, stampSize);
+      const grad5 = ctx5.createRadialGradient(half, half, 0, half, half, half);
+      grad5.addColorStop(0, 'rgba(6, 11, 20, 0.42)');
+      grad5.addColorStop(0.5, 'rgba(8, 14, 24, 0.22)');
+      grad5.addColorStop(0.85, 'rgba(10, 16, 28, 0.05)');
+      grad5.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx5.fillStyle = grad5;
+      ctx5.beginPath();
+      ctx5.arc(half, half, half, 0, Math.PI * 2);
+      ctx5.fill();
+    }
+    bakeStamps(curPrimary, curSecondary);
+
+    // Pointer tracking & fluid disturbance
+    const pointer = {
+      x: -1000,
+      y: -1000,
+      prevX: -1000,
+      prevY: -1000,
+      vx: 0,
+      vy: 0,
+      speed: 0,
+      active: false
+    };
+
+    let idleAngle = 0;
+
+    // Ambient Volumetric Smoke Particles
+    const smokePuffs = [];
+    const isMobile = window.innerWidth < 768;
+    const puffCount = isMobile ? 32 : 58;
+
+    class SmokePuff {
+      constructor(init = true) {
+        this.reset(init);
       }
 
       reset(init = false) {
-        this.x = init ? Math.random() * width : (Math.random() < 0.5 ? -10 : width + 10);
-        this.y = init ? Math.random() * height : Math.random() * height;
-        const speed = 0.22 + Math.random() * 0.38;
-        const angle = Math.random() * Math.PI * 2;
-        this.vx = Math.cos(angle) * speed;
-        this.vy = Math.sin(angle) * speed;
-        this.baseRadius = 1.2 + Math.random() * 1.5;
-        this.pulseSpeed = 0.02 + Math.random() * 0.03;
-        this.pulseOffset = Math.random() * Math.PI * 2;
-        this.colorType = Math.random() > 0.35 ? 'primary' : 'cyan';
-      }
+        this.x = Math.random() * width;
+        this.y = init ? Math.random() * height : height + (50 + Math.random() * 120);
+        this.baseSize = isMobile ? (200 + Math.random() * 260) : (280 + Math.random() * 380);
+        this.size = this.baseSize;
+        
+        // Gentle buoyancy (smoke slowly rises and weaves)
+        this.vy = -(0.25 + Math.random() * 0.45);
+        this.vx = (Math.random() - 0.5) * 0.35;
+        this.angle = Math.random() * Math.PI * 2;
+        this.rotSpeed = (Math.random() - 0.5) * 0.003;
+        
+        // Breathing pulsation
+        this.pulseFreq = 0.008 + Math.random() * 0.012;
+        this.pulsePhase = Math.random() * Math.PI * 2;
+        
+        // Stamp type
+        const rand = Math.random();
+        if (rand < 0.35) this.stampType = 'primaryPuff';
+        else if (rand < 0.65) this.stampType = 'secondaryPuff';
+        else if (rand < 0.85) this.stampType = 'primaryWisp';
+        else this.stampType = 'secondaryWisp';
 
-      update() {
-        // Magnetic attraction to cursor
-        if (mouse.active) {
-          const dx = mouse.x - this.x;
-          const dy = mouse.y - this.y;
-          const distSq = dx * dx + dy * dy;
-          if (distSq < mouseConnectDistSq && distSq > 100) {
-            const force = (1 - Math.sqrt(distSq) / mouseConnectDist) * 0.35;
-            this.x += (dx / Math.sqrt(distSq)) * force;
-            this.y += (dy / Math.sqrt(distSq)) * force;
-          }
-        }
-
-        this.x += this.vx;
-        this.y += this.vy;
-
-        // Wrap boundaries
-        if (this.x < -30) this.x = width + 20;
-        else if (this.x > width + 30) this.x = -20;
-        if (this.y < -30) this.y = height + 20;
-        else if (this.y > height + 30) this.y = -20;
-      }
-
-      draw(time) {
-        const pulse = Math.sin(time * this.pulseSpeed + this.pulseOffset) * 0.35 + 1;
-        const r = this.baseRadius * pulse;
-        const rgb = this.colorType === 'primary' ? themeEmerald : themeCyan;
-
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.65)`;
-        ctx.fill();
-
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, r * 2.2, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.12)`;
-        ctx.fill();
-      }
-    }
-
-    // Cybernetic Grid Data Pulses (Traveling along grid lines)
-    const dataPulses = [];
-    const pulseCount = window.innerWidth < 768 ? 3 : 6;
-
-    class DataPulse {
-      constructor() {
-        this.reset();
-      }
-
-      reset() {
-        this.isHoriz = Math.random() > 0.5;
-        if (this.isHoriz) {
-          const row = Math.floor(Math.random() * (height / gridSize));
-          this.fixedCoord = row * gridSize;
-          this.movingCoord = Math.random() < 0.5 ? 0 : width;
-          this.speed = (this.movingCoord === 0 ? 1 : -1) * (1.6 + Math.random() * 1.2);
-        } else {
-          const col = Math.floor(Math.random() * (width / gridSize));
-          this.fixedCoord = col * gridSize;
-          this.movingCoord = Math.random() < 0.5 ? 0 : height;
-          this.speed = (this.movingCoord === 0 ? 1 : -1) * (1.6 + Math.random() * 1.2);
-        }
-        this.length = 32 + Math.random() * 28;
+        this.alpha = 0.28 + Math.random() * 0.45;
         this.life = 0;
-        this.maxLife = 200 + Math.random() * 250;
+        this.fadeIn = init ? 1 : 0;
       }
 
-      update() {
-        this.movingCoord += this.speed;
-        this.life++;
+      update(time) {
+        // Natural harmonic wave drift (fluid curling)
+        const waveX = Math.sin(time * 0.0008 + this.y * 0.0025) * 0.4;
+        const waveY = Math.cos(time * 0.0006 + this.x * 0.002) * 0.18;
+        
+        this.x += this.vx + waveX;
+        this.y += this.vy + waveY;
+        this.angle += this.rotSpeed;
 
-        // At grid intersections, slight probability to make a 90 deg turn
-        if (this.life > 30 && Math.abs(this.movingCoord % gridSize) < Math.abs(this.speed)) {
-          if (Math.random() < 0.28) {
-            const oldFixed = this.fixedCoord;
-            const oldMoving = Math.round(this.movingCoord / gridSize) * gridSize;
-            this.isHoriz = !this.isHoriz;
-            this.fixedCoord = oldMoving;
-            this.movingCoord = oldFixed;
-            this.speed = (Math.random() < 0.5 ? 1 : -1) * (1.6 + Math.random() * 1.2);
+        // Pulsating size
+        const pulse = 1 + Math.sin(time * this.pulseFreq + this.pulsePhase) * 0.12;
+        this.size = this.baseSize * pulse;
+
+        // Pointer fluid interaction (smoke swirls and deflects around cursor)
+        if (pointer.active) {
+          const dx = this.x - pointer.x;
+          const dy = this.y - pointer.y;
+          const distSq = dx * dx + dy * dy;
+          const interactRadius = 240;
+          if (distSq < interactRadius * interactRadius && distSq > 4) {
+            const dist = Math.sqrt(distSq);
+            const force = (1 - dist / interactRadius) * (pointer.speed * 0.08 + 0.4);
+            // Deflect outward
+            this.x += (dx / dist) * force * 3.5;
+            this.y += (dy / dist) * force * 3.5;
+            // Impart vortex swirl
+            this.rotSpeed += (pointer.vx * dy - pointer.vy * dx) * 0.000003;
           }
         }
 
-        const limit = this.isHoriz ? width : height;
-        if (this.movingCoord < -50 || this.movingCoord > limit + 50 || this.life > this.maxLife) {
-          this.reset();
+        // Fade in when entering from bottom
+        if (this.fadeIn < 1) {
+          this.fadeIn += 0.012;
+          if (this.fadeIn > 1) this.fadeIn = 1;
         }
+
+        // Boundary wrap: if drifted above viewport, reset at bottom
+        if (this.y < -this.size) {
+          this.reset(false);
+        }
+        if (this.x < -this.size) this.x = width + this.size * 0.5;
+        if (this.x > width + this.size) this.x = -this.size * 0.5;
       }
 
       draw() {
-        const rgb = themeEmerald;
+        const stamp = stamps[this.stampType];
+        if (!stamp) return;
+
         ctx.save();
-        ctx.lineWidth = 1.5;
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.angle);
+        ctx.globalAlpha = this.alpha * this.fadeIn;
+        const half = this.size / 2;
+        ctx.drawImage(stamp, -half, -half, this.size, this.size);
+        ctx.restore();
+      }
+    }
 
-        const x1 = this.isHoriz ? this.movingCoord : this.fixedCoord;
-        const y1 = this.isHoriz ? this.fixedCoord : this.movingCoord;
-        const x0 = this.isHoriz ? this.movingCoord - this.speed * (this.length / 2) : this.fixedCoord;
-        const y0 = this.isHoriz ? this.fixedCoord : this.movingCoord - this.speed * (this.length / 2);
+    // Dynamic Trail Smoke Wisps (spawned by moving cursor)
+    const trailWisps = [];
+    const maxTrailWisps = 45;
 
-        const grad = ctx.createLinearGradient(x0, y0, x1, y1);
-        grad.addColorStop(0, `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0)`);
-        grad.addColorStop(0.7, `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.45)`);
-        grad.addColorStop(1, `rgba(255, 255, 255, 0.95)`);
+    class TrailWisp {
+      constructor(x, y, vx, vy) {
+        this.x = x + (Math.random() - 0.5) * 16;
+        this.y = y + (Math.random() - 0.5) * 16;
+        this.vx = vx * 0.28 + (Math.random() - 0.5) * 0.8;
+        this.vy = vy * 0.28 - 0.35 + (Math.random() - 0.5) * 0.5;
+        this.angle = Math.random() * Math.PI * 2;
+        this.rotSpeed = (Math.random() - 0.5) * 0.04;
+        this.size = 70 + Math.random() * 90;
+        this.growRate = 1.4 + Math.random() * 1.8;
+        this.alpha = 0.55 + Math.random() * 0.35;
+        this.decay = 0.012 + Math.random() * 0.01;
+        this.stampType = Math.random() > 0.4 ? 'primaryPuff' : 'secondaryWisp';
+      }
 
-        ctx.strokeStyle = grad;
-        ctx.beginPath();
-        ctx.moveTo(x0, y0);
-        ctx.lineTo(x1, y1);
-        ctx.stroke();
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.vx *= 0.97;
+        this.vy *= 0.97;
+        this.size += this.growRate;
+        this.angle += this.rotSpeed;
+        this.alpha -= this.decay;
+        return this.alpha > 0;
+      }
 
-        ctx.beginPath();
-        ctx.arc(x1, y1, 2, 0, Math.PI * 2);
-        ctx.fillStyle = '#ffffff';
-        ctx.shadowColor = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.8)`;
-        ctx.shadowBlur = 8;
-        ctx.fill();
+      draw() {
+        if (this.alpha <= 0) return;
+        const stamp = stamps[this.stampType];
+        if (!stamp) return;
 
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.angle);
+        ctx.globalAlpha = Math.max(0, this.alpha);
+        const half = this.size / 2;
+        ctx.drawImage(stamp, -half, -half, this.size, this.size);
         ctx.restore();
       }
     }
@@ -1483,14 +1577,9 @@ Qualifications:
       bgCanvas.style.height = `${height}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      if (particles.length === 0) {
-        for (let i = 0; i < particleCount; i++) {
-          particles.push(new Particle());
-        }
-      }
-      if (dataPulses.length === 0) {
-        for (let i = 0; i < pulseCount; i++) {
-          dataPulses.push(new DataPulse());
+      if (smokePuffs.length === 0) {
+        for (let i = 0; i < puffCount; i++) {
+          smokePuffs.push(new SmokePuff(true));
         }
       }
     }
@@ -1498,156 +1587,115 @@ Qualifications:
     window.addEventListener('resize', resizeCanvas, { passive: true });
     resizeCanvas();
 
-    // Mouse Tracking with smooth dampening
+    // Mouse & Touch Tracking
+    let lastSpawnTime = 0;
+    function handlePointerMove(clientX, clientY) {
+      if (pointer.prevX === -1000) {
+        pointer.prevX = clientX;
+        pointer.prevY = clientY;
+      } else {
+        pointer.prevX = pointer.x;
+        pointer.prevY = pointer.y;
+      }
+      pointer.x = clientX;
+      pointer.y = clientY;
+      pointer.vx = pointer.x - pointer.prevX;
+      pointer.vy = pointer.y - pointer.prevY;
+      pointer.speed = Math.hypot(pointer.vx, pointer.vy);
+      pointer.active = true;
+
+      // Spawn interactive trailing smoke wisp if moving fast enough
+      const now = performance.now();
+      if (pointer.speed > 3 && now - lastSpawnTime > 40 && trailWisps.length < maxTrailWisps) {
+        trailWisps.push(new TrailWisp(pointer.x, pointer.y, pointer.vx, pointer.vy));
+        lastSpawnTime = now;
+      }
+    }
+
     window.addEventListener('pointermove', (e) => {
-      mouse.targetX = e.clientX;
-      mouse.targetY = e.clientY;
-      mouse.active = true;
+      handlePointerMove(e.clientX, e.clientY);
     }, { passive: true });
 
     document.addEventListener('pointerleave', () => {
-      mouse.active = false;
+      pointer.active = false;
+      pointer.prevX = -1000;
+      pointer.prevY = -1000;
+    });
+
+    // Touch support
+    window.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches[0]) {
+        handlePointerMove(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => {
+      pointer.active = false;
     });
 
     let frameCount = 0;
 
-    function renderSmartGrid() {
+    function renderSmokeField(time) {
       frameCount++;
 
-      if (mouse.active) {
-        mouse.x += (mouse.targetX - mouse.x) * 0.15;
-        mouse.y += (mouse.targetY - mouse.y) * 0.15;
-      } else {
-        wanderingAngle += 0.008;
-        mouse.x = width * 0.5 + Math.cos(wanderingAngle) * (width * 0.35);
-        mouse.y = height * 0.45 + Math.sin(wanderingAngle * 1.4) * (height * 0.28);
+      // Smooth color transition interpolation towards target theme
+      let colorChanged = false;
+      const lerp = 0.08;
+      ['r', 'g', 'b'].forEach(ch => {
+        if (Math.abs(curPrimary[ch] - targetPrimary[ch]) > 0.5) {
+          curPrimary[ch] += (targetPrimary[ch] - curPrimary[ch]) * lerp;
+          colorChanged = true;
+        }
+        if (Math.abs(curSecondary[ch] - targetSecondary[ch]) > 0.5) {
+          curSecondary[ch] += (targetSecondary[ch] - curSecondary[ch]) * lerp;
+          colorChanged = true;
+        }
+      });
+      if (colorChanged && frameCount % 3 === 0) {
+        bakeStamps(curPrimary, curSecondary);
       }
 
+      // Idle atmospheric breeze simulation when user is not moving pointer
+      if (!pointer.active) {
+        idleAngle += 0.006;
+        pointer.x = width * 0.5 + Math.cos(idleAngle) * (width * 0.35);
+        pointer.y = height * 0.5 + Math.sin(idleAngle * 1.3) * (height * 0.28);
+        pointer.speed = 1.2;
+        pointer.vx = -Math.sin(idleAngle) * 1.2;
+        pointer.vy = Math.cos(idleAngle * 1.3) * 1.2;
+      } else {
+        pointer.speed *= 0.92;
+      }
+
+      // Clear Canvas
       ctx.clearRect(0, 0, width, height);
 
-      // 1. Draw Subtle Architectural Grid
-      const rgb = themeEmerald;
-      ctx.lineWidth = 1;
+      // Set Blending Mode for Volumetric Smoke Depth
+      ctx.globalCompositeOperation = 'screen';
 
-      ctx.beginPath();
-      for (let x = 0; x <= width; x += gridSize) {
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, height);
+      // 1. Draw Deep Volumetric Smoke Puffs
+      for (let i = 0; i < smokePuffs.length; i++) {
+        const puff = smokePuffs[i];
+        puff.update(time);
+        puff.draw();
       }
-      for (let y = 0; y <= height; y += gridSize) {
-        ctx.moveTo(0, y);
-        ctx.lineTo(width, y);
-      }
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.022)';
-      ctx.stroke();
 
-      // 2. Interactive Spotlight on Grid Lines & Reticle Crosshairs
-      const spotGrad = ctx.createRadialGradient(
-        mouse.x, mouse.y, 0,
-        mouse.x, mouse.y, mouse.radius
-      );
-      spotGrad.addColorStop(0, `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.12)`);
-      spotGrad.addColorStop(0.5, `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.04)`);
-      spotGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
-
-      ctx.save();
-      ctx.fillStyle = spotGrad;
-      ctx.fillRect(0, 0, width, height);
-      ctx.restore();
-
-      // Spotlight illuminated grid lines
-      ctx.save();
-      ctx.strokeStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.14)`;
-      ctx.lineWidth = 1;
-      const minX = Math.max(0, Math.floor((mouse.x - mouse.radius) / gridSize) * gridSize);
-      const maxX = Math.min(width, Math.ceil((mouse.x + mouse.radius) / gridSize) * gridSize);
-      const minY = Math.max(0, Math.floor((mouse.y - mouse.radius) / gridSize) * gridSize);
-      const maxY = Math.min(height, Math.ceil((mouse.y + mouse.radius) / gridSize) * gridSize);
-
-      ctx.beginPath();
-      for (let x = minX; x <= maxX; x += gridSize) {
-        const dx = Math.abs(x - mouse.x);
-        if (dx < mouse.radius) {
-          const span = Math.sqrt(mouse.radius * mouse.radius - dx * dx);
-          ctx.moveTo(x, Math.max(0, mouse.y - span));
-          ctx.lineTo(x, Math.min(height, mouse.y + span));
+      // 2. Draw Interactive Trail Smoke Wisps
+      for (let i = trailWisps.length - 1; i >= 0; i--) {
+        const wisp = trailWisps[i];
+        const alive = wisp.update();
+        if (alive) {
+          wisp.draw();
+        } else {
+          trailWisps.splice(i, 1);
         }
       }
-      for (let y = minY; y <= maxY; y += gridSize) {
-        const dy = Math.abs(y - mouse.y);
-        if (dy < mouse.radius) {
-          const span = Math.sqrt(mouse.radius * mouse.radius - dy * dy);
-          ctx.moveTo(Math.max(0, mouse.x - span), y);
-          ctx.lineTo(Math.min(width, mouse.x + span), y);
-        }
-      }
-      ctx.stroke();
 
-      // Draw '+' reticle crosshairs at grid intersections near mouse
-      const crossSize = 3;
-      ctx.strokeStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.28)`;
-      ctx.beginPath();
-      for (let x = minX; x <= maxX; x += gridSize) {
-        for (let y = minY; y <= maxY; y += gridSize) {
-          const dSq = (x - mouse.x) * (x - mouse.x) + (y - mouse.y) * (y - mouse.y);
-          if (dSq < mouse.radius * mouse.radius) {
-            ctx.moveTo(x - crossSize, y);
-            ctx.lineTo(x + crossSize, y);
-            ctx.moveTo(x, y - crossSize);
-            ctx.lineTo(x, y + crossSize);
-          }
-        }
-      }
-      ctx.stroke();
-      ctx.restore();
-
-      // 3. Update & Draw Cybernetic Data Pulses
-      dataPulses.forEach(pulse => {
-        pulse.update();
-        pulse.draw();
-      });
-
-      // 4. Update & Draw Neural Synapse Particles & Filaments
-      for (let i = 0; i < particles.length; i++) {
-        const p1 = particles[i];
-        p1.update();
-        p1.draw(frameCount);
-
-        // Connections between particles
-        for (let j = i + 1; j < particles.length; j++) {
-          const p2 = particles[j];
-          const dx = p1.x - p2.x;
-          const dy = p1.y - p2.y;
-          const distSq = dx * dx + dy * dy;
-
-          if (distSq < maxConnectDistSq) {
-            const alpha = (1 - Math.sqrt(distSq) / maxConnectDist) * 0.22;
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha.toFixed(3)})`;
-            ctx.lineWidth = 0.8;
-            ctx.stroke();
-          }
-        }
-
-        // Connection from particle to cursor
-        const mdx = p1.x - mouse.x;
-        const mdy = p1.y - mouse.y;
-        const mDistSq = mdx * mdx + mdy * mdy;
-        if (mDistSq < mouseConnectDistSq) {
-          const mAlpha = (1 - Math.sqrt(mDistSq) / mouseConnectDist) * 0.42;
-          ctx.beginPath();
-          ctx.moveTo(p1.x, p1.y);
-          ctx.lineTo(mouse.x, mouse.y);
-          ctx.strokeStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${mAlpha.toFixed(3)})`;
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        }
-      }
+      // Restore composite operation
+      ctx.globalCompositeOperation = 'source-over';
 
       if (isVisible) {
-        animFrameId = requestAnimationFrame(renderSmartGrid);
+        animFrameId = requestAnimationFrame(renderSmokeField);
       }
     }
 
@@ -1657,12 +1705,13 @@ Qualifications:
         if (animFrameId) cancelAnimationFrame(animFrameId);
       } else {
         isVisible = true;
-        animFrameId = requestAnimationFrame(renderSmartGrid);
+        animFrameId = requestAnimationFrame(renderSmokeField);
       }
     });
 
-    animFrameId = requestAnimationFrame(renderSmartGrid);
+    animFrameId = requestAnimationFrame(renderSmokeField);
   }
+
 
 
 });
