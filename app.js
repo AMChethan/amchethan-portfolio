@@ -318,60 +318,61 @@ document.addEventListener('DOMContentLoaded', () => {
       keywords: ['chethan', 'who', 'about', 'summary', 'profile', '3 bullet points'],
       response: `Here is a high-level executive profile of A M Chethan:
 • 🎓 **Academic Foundation:** Computer Science Engineering graduate from Government Engineering College Chamarajanagara with an outstanding **8.7 CGPA**.
-• ⚙️ **AI & Backend Core:** Specializes in Java, Spring Boot microservices, Dockerization, and integrating ML models (DeepSeek Coder 1.3B) for autonomous error analysis & patch generation.
-• 🚀 **Hands-on Impact:** Software Engineer Intern at NavaBharath Technologies (engineering MediUnify healthcare platforms) and Java Full Stack Intern at QSpiders, combined with the "Seva Sadhaka" leadership award at Youth for Seva NGO.`
+• ⚙️ **AI & Backend Core:** Specializes in Java, Spring Boot microservices, FastAPI, REST APIs, Docker, and integrating ML models (DeepSeek Coder 1.3B) for autonomous error analysis & patch generation.
+• 🚀 **Hands-on Impact:** Junior Software Engineer at NavaBharath Technologies (engineering MediUnify healthcare platforms) and Java Full Stack Intern at QSpiders, combined with the "Seva Sadhaka" leadership award at Youth for Seva NGO.`
     },
     {
       keywords: ['bugbuster', 'ide', 'deepseek', 'fault', 'patch', 'sbfl', 'error detection'],
       response: `🛠️ **BugBuster IDE Technical Architecture:**
-• **Core Purpose:** An intelligent development environment built to automate error localization and source code fixes across multiple programming languages.
-• **AI Model:** Integrated **DeepSeek Coder 1.3B**, augmented with **Spectrum-Based Fault Localization (SBFL)** algorithms to pin-point suspicious code lines.
-• **Backend Framework:** Spring Boot REST APIs handling live code submissions and compilation pipelines.
-• **Isolation:** Containerized with **Docker** for sandboxed, secure, reproducible execution environments.`
+• **Core Purpose:** An AI-powered multi-language web-based code editor with execution, error detection, and automated correction capabilities.
+• **AI Model & Repair:** Integrated **DeepSeek Coder 1.3B ML model** for automated patch generation coupled with **Spectrum Based Fault Localization (SBFL)**.
+• **Backend Framework:** Java and Spring Boot REST APIs handling code submissions and compilation pipelines.
+• **Containerization:** Containerized with **Docker** for secure, sandboxed, and reproducible code execution.`
     },
     {
-      keywords: ['navabharath', 'mediunify', 'healthcare', 'hospital', 'internship', 'role at navabharath'],
-      response: `🏥 **MediUnify Platform & NavaBharath Internship:**
-• **Role:** Software Engineer Intern (2026 – Present) at NavaBharath Technologies, Mysore.
-• **Platform Overview:** MediUnify is an integrated enterprise healthcare platform connecting hospital workflows, patient portals, pharmacy inventory, and administrative control.
-• **Tech Stack:** React, JavaScript, HTML, CSS, Node.js, and Express.js.
+      keywords: ['navabharath', 'mediunify', 'healthcare', 'hospital', 'internship', 'role at navabharath', 'junior software engineer'],
+      response: `🏥 **MediUnify Platform & NavaBharath Role:**
+• **Role:** Junior Software Engineer (Aug 2026 – Present) at NavaBharath Technologies, Mysore.
+• **Platform Overview:** MediUnify is an integrated enterprise healthcare platform comprising patient, hospital, pharmacy, and admin applications.
 • **Chethan's Contributions:**
-  1. Engineered hospital-side reactive web applications using React, JavaScript, HTML5, and CSS3.
-  2. Implemented clinical appointment, doctor rostering, and patient record workflows.
-  3. Built and refined backend services, authentication, and REST APIs using Node.js and Express.js.`
+  1. Develop and enhance application features and clinical workflows using React and JavaScript.
+  2. Work on backend workflows for pharmacy inventory management and order processing.
+  3. Understand and work with REST APIs, backend integration, database schemas, and application data relationships.
+  4. Collaborate with team members to analyze requirements, implement feature updates, and improve functionality.`
     },
     {
       keywords: ['qspiders', 'test yantra', 'full stack intern'],
       response: `💻 **QSpiders (Test Yantra Software) Internship:**
-• **Role:** Java Full Stack Development Intern (Jan 2026 – May 2026, Mysore).
-• **Technical Work:** Built end-to-end full stack web applications integrating React, JavaScript, HTML5/CSS3 frontend with Java Spring backend.
-• **Database Design:** Optimized MySQL relational schemas and implemented full CRUD operations adhering to industry clean architecture patterns.`
+• **Role:** Java Full Stack Development Intern (Jan 2026 – June 2026, Mysore).
+• **Technical Work:** Developed mini full-stack applications using Java, Spring, React, JavaScript, HTML, and CSS.
+• **Database & APIs:** Implemented CRUD operations, integrated features with MySQL databases, and practiced REST API development and backend design.`
     },
     {
       keywords: ['tech stack', 'skills', 'technologies', 'programming', 'languages', 'tools'],
       response: `💻 **Chethan's Complete Technical Arsenal:**
-• **Languages:** Java, JavaScript (ES6+), HTML5, CSS3, Python, C, SQL
-• **Frontend:** ReactJS, JavaScript, HTML5, CSS3, Modern UI/UX, Responsive Design
-• **Backend & APIs:** Node.js, Express.js, Spring Boot, RESTful APIs, JDBC
-• **AI & Machine Learning:** DeepSeek Coder 1.3B, Natural Language Processing (NLP), Intent Recognition, Model Fine-tuning & Embeddings
-• **Databases:** MySQL, Relational Database Management Systems
-• **DevOps & Tools:** Docker, Git/GitHub, VS Code, Eclipse
-• **Core Foundations:** Data Structures, OOP, DBMS, OS, CRUD Architecture`
+• **Programming Languages:** Java, C, Python, JavaScript
+• **CS Fundamentals:** Data Structures, OOP, DBMS, Operating Systems
+• **Backend:** Spring Boot, REST APIs, JDBC, FastAPI, Node.js, Express.js
+• **Web Development:** React, HTML5, CSS3, Modern UI/UX
+• **Databases:** MySQL, SQL
+• **Tools:** Git, Docker, VS Code, Eclipse
+• **AI/ML:** Generative AI & LLM fundamentals, code-generation model integration, DeepSeek Coder 1.3B, NLP
+• **Soft Skills:** Problem Solving, Analytical Thinking, Team Collaboration, Quick Learner, Good Communication`
     },
     {
       keywords: ['hire', 'why hire', 'value', 'strength', 'candidate', 'recruiter'],
       response: `🎯 **Why Chethan is an Exceptional Engineering Hire:**
 1. **Rare AI + Enterprise Backend Intersection:** He doesn't just build UI; he implements ML models (DeepSeek Coder 1.3B) into real, production-ready Spring Boot microservices.
-2. **Proven Track Record:** Holds an 8.7 CGPA and has already worked on production healthcare software (MediUnify) during his internships.
+2. **Proven Track Record:** Holds an 8.7 CGPA and has already worked on production healthcare software (MediUnify) in his professional software engineering roles.
 3. **Container-Native Mindset:** Fully proficient with Docker, Git, RESTful standards, and clean code principles.
 4. **Leadership & Empathy:** Recognized with the "Seva Sadhaka" award for community volunteering, demonstrating stellar communication, team-player attitude, and problem-solving resilience.`
     },
     {
       keywords: ['chatbot', 'nlp', 'conversational', 'python chatbot'],
-      response: `🤖 **AI-Powered Context-Aware Conversational Engine:**
-• Developed an intelligent conversational agent using Python NLP libraries.
-• Features multi-turn intent recognition, slot filling, and context retention across sessions.
-• Integrated a clean, reactive frontend with Python backend APIs for sub-second streaming answers.`
+      response: `🤖 **AI-Powered Chatbot:**
+• Developed chatbot application capable of understanding user queries using Natural Language Processing (NLP) techniques.
+• Implemented intent recognition and context-aware response generation system.
+• Built complete frontend-backend integration with Python backend and JavaScript frontend.`
     },
     {
       keywords: ['yourstore', 'ecommerce', 'e-commerce', 'shopping', 'store', 'cart', 'bootstrap', 'storefront'],
@@ -559,7 +560,7 @@ document.addEventListener('DOMContentLoaded', () => {
 • **AI Systems Differentiator:** Specialized practical capability integrating DeepSeek Coder 1.3B AI models and automated fault localization pipelines.
 
 🚀 **PROVEN PRODUCTION EXPERIENCE:**
-• **Enterprise Healthcare SaaS:** Software Engineer Intern at NavaBharath Technologies actively engineering the MediUnify platform (React, Node.js, Express.js).
+• **Enterprise Healthcare SaaS:** Junior Software Engineer at NavaBharath Technologies actively engineering the MediUnify platform (React, JavaScript, REST APIs).
 • **Enterprise Java Full Stack:** Full Stack Intern at QSpiders engineering end-to-end full stack web platforms and REST APIs.
 • **Autonomous Developer Tools:** Built BugBuster IDE with DeepSeek Coder 1.3B for real-time error repair and automated patches.
 • **Academic & Character Excellence:** Computer Science graduate with an outstanding **8.7 CGPA** and recipient of the NGO "Seva Sadhaka" leadership award.
@@ -630,7 +631,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (bestMatch && highestScore > 0) {
         appendTerminalMessage('ai', bestMatch.response);
       } else {
-        appendTerminalMessage('ai', `I analyzed your query: "${queryText}".\n\n• 🎓 **Chethan's Overview:** Computer Science Engineer (8.7 CGPA) with expertise in Java, Spring Boot, React, Node.js, Express.js, DeepSeek Coder 1.3B AI integration, and Docker.\n• 🏥 **Active Role:** Software Engineer Intern at NavaBharath Technologies engineering MediUnify healthcare platform.\n• 💡 **Try asking:** "BugBuster IDE", "MediUnify tech stack", "Why hire Chethan", or "Technical Arsenal", or paste any **Job Description** to get an instant candidate match percentage!`);
+        appendTerminalMessage('ai', `I analyzed your query: "${queryText}".\n\n• 🎓 **Chethan's Overview:** Computer Science Engineer (8.7 CGPA) with expertise in Java, Spring Boot, React, FastAPI, DeepSeek Coder 1.3B AI integration, and Docker.\n• 🏥 **Active Role:** Junior Software Engineer at NavaBharath Technologies engineering MediUnify healthcare platform.\n• 💡 **Try asking:** "BugBuster IDE", "MediUnify tech stack", "Why hire Chethan", or "Technical Arsenal", or paste any **Job Description** to get an instant candidate match percentage!`);
       }
     }, 400);
   }
@@ -936,7 +937,7 @@ Qualifications:
   }
 
   // =========================================================================
-  // 14. VOLUNTEERING HORIZONTAL STORIES: BUTTERY SLOW AUTO-SCROLL ENGINE
+  // 14. VOLUNTEERING HORIZONTAL STORIES: INSTANT & BUTTERY AUTO-SCROLL ENGINE
   // =========================================================================
   const volTrack = document.getElementById('volCardsTrack');
   const volProgressBar = document.getElementById('volScrollProgressBar');
@@ -947,15 +948,21 @@ Qualifications:
   const volImg = document.getElementById('volLightboxImg');
   const volCaption = document.getElementById('volLightboxCaption');
 
-  let volSpeed = 0.55;         // Smooth cinematic slow drift: ~33px / second
+  let volBaseSpeed = 0.95;     // Clean, visible, buttery glide (~58px / second)
+  let volSpeed = volBaseSpeed; 
   let volAutoPlay = true;      // Master autoplay toggle state
-  let volIsPaused = false;     // Temporary pause state (hover, drag, modal, end pause)
+  let volIsPaused = false;     // Temporary pause state (drag, modal, end pause)
   let volResumeTimer = null;
-  let volIsInViewport = false;
+  let volIsInViewport = true;  // Ready to scroll immediately without delays
   let isDraggingTrack = false;
   let dragStartX = 0;
   let dragStartScrollLeft = 0;
   let isRewinding = false;
+  let volScrollPos = 0;
+
+  if (volTrack) {
+    volScrollPos = volTrack.scrollLeft;
+  }
 
   // Update Autoplay UI button
   function updateAutoplayUI(active, text) {
@@ -963,7 +970,7 @@ Qualifications:
     if (active) {
       volAutoplayBtn.classList.remove('paused');
       if (volAutoplayText) volAutoplayText.textContent = text || 'Auto-Scroll';
-      volAutoplayBtn.title = 'Automatic slow scroll is active. Click to pause.';
+      volAutoplayBtn.title = 'Automatic scroll is active. Click to pause.';
     } else {
       volAutoplayBtn.classList.add('paused');
       if (volAutoplayText) volAutoplayText.textContent = text || 'Paused';
@@ -976,6 +983,8 @@ Qualifications:
     volAutoPlay = !volAutoPlay;
     if (volAutoPlay) {
       volIsPaused = false;
+      volSpeed = volBaseSpeed;
+      if (volTrack) volScrollPos = volTrack.scrollLeft;
       updateAutoplayUI(true, 'Auto-Scroll');
     } else {
       volIsPaused = true;
@@ -1004,10 +1013,11 @@ Qualifications:
       left: direction * cardStep,
       behavior: 'smooth'
     });
-    pauseVolAutoScrollTemporarily(3200, 'Navigating');
+    volScrollPos = volTrack.scrollLeft + (direction * cardStep);
+    pauseVolAutoScrollTemporarily(800, 'Navigating');
   };
 
-  // Filter tabs (All, SKD, Rathotsava)
+  // Filter tabs (All, NMMS, SKD, Rathotsava)
   window.switchVolTab = function(tabName) {
     const tabButtons = document.querySelectorAll('.vol-tab-btn');
     tabButtons.forEach(btn => {
@@ -1025,9 +1035,10 @@ Qualifications:
 
     if (volTrack) {
       volTrack.scrollTo({ left: 0, behavior: 'smooth' });
+      volScrollPos = 0;
     }
     updateVolProgress();
-    pauseVolAutoScrollTemporarily(2800, 'Filtering');
+    pauseVolAutoScrollTemporarily(400, 'Filtering');
   };
 
   // High-Resolution Lightbox Modal
@@ -1048,8 +1059,9 @@ Qualifications:
     if (!volModal) return;
     volModal.classList.remove('active');
     document.body.style.overflow = '';
+    if (volTrack) volScrollPos = volTrack.scrollLeft;
     if (volAutoPlay) {
-      pauseVolAutoScrollTemporarily(1200, 'Auto-Scroll');
+      pauseVolAutoScrollTemporarily(300, 'Auto-Scroll');
     }
   };
 
@@ -1060,26 +1072,31 @@ Qualifications:
     }
   });
 
-  // Temporarily pause auto-scroll upon user interaction
-  function pauseVolAutoScrollTemporarily(duration = 2500, label = 'Paused') {
+  // Temporarily pause auto-scroll upon user interaction with swift resumption
+  function pauseVolAutoScrollTemporarily(duration = 600, label = 'Paused') {
     if (!volAutoPlay) return;
     volIsPaused = true;
     clearTimeout(volResumeTimer);
     updateAutoplayUI(false, label);
     volResumeTimer = setTimeout(() => {
+      if (volTrack) volScrollPos = volTrack.scrollLeft;
       volIsPaused = false;
       if (volAutoPlay) updateAutoplayUI(true, 'Auto-Scroll');
     }, duration);
   }
 
-  // IntersectionObserver to only animate when visible
-  if (volSection && 'IntersectionObserver' in window) {
+  // IntersectionObserver directly on the cards track wrapper
+  const volTrackWrapper = document.querySelector('.vol-carousel-wrapper') || volTrack;
+  if (volTrackWrapper && 'IntersectionObserver' in window) {
     const volObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         volIsInViewport = entry.isIntersecting;
+        if (volIsInViewport && volTrack) {
+          volScrollPos = volTrack.scrollLeft;
+        }
       });
-    }, { threshold: 0.1 });
-    volObserver.observe(volSection);
+    }, { rootMargin: '120px 0px 120px 0px' });
+    volObserver.observe(volTrackWrapper);
   } else {
     volIsInViewport = true;
   }
@@ -1106,6 +1123,7 @@ Qualifications:
       if (!isDraggingTrack) return;
       const dx = e.clientX - dragStartX;
       volTrack.scrollLeft = dragStartScrollLeft - dx;
+      volScrollPos = volTrack.scrollLeft;
       updateVolProgress();
     });
 
@@ -1113,7 +1131,8 @@ Qualifications:
       if (!isDraggingTrack) return;
       isDraggingTrack = false;
       volTrack.classList.remove('is-dragging');
-      pauseVolAutoScrollTemporarily(2800, 'Auto-Scroll');
+      volScrollPos = volTrack.scrollLeft;
+      pauseVolAutoScrollTemporarily(500, 'Auto-Scroll');
       if (e && volTrack.releasePointerCapture && e.pointerId) {
         try { volTrack.releasePointerCapture(e.pointerId); } catch (_) {}
       }
@@ -1122,22 +1141,16 @@ Qualifications:
     volTrack.addEventListener('pointerup', endTrackDrag);
     volTrack.addEventListener('pointercancel', endTrackDrag);
 
-    // Pause on hover
+    // On hover: gently slow down drift rather than freezing dead, so motion never stops completely
     volTrack.addEventListener('mouseenter', () => {
       if (volAutoPlay && !isDraggingTrack) {
-        volIsPaused = true;
-        clearTimeout(volResumeTimer);
-        updateAutoplayUI(false, 'Hover Paused');
+        volSpeed = 0.35; // Gentle slow motion on hover so user can read while movement continues
       }
     });
 
     volTrack.addEventListener('mouseleave', () => {
       if (volAutoPlay && !isDraggingTrack) {
-        clearTimeout(volResumeTimer);
-        volResumeTimer = setTimeout(() => {
-          volIsPaused = false;
-          updateAutoplayUI(true, 'Auto-Scroll');
-        }, 1200);
+        volSpeed = volBaseSpeed; // Restore full buttery speed immediately
       }
     });
 
@@ -1146,12 +1159,18 @@ Qualifications:
       const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
       if (Math.abs(delta) > 5) {
         volTrack.scrollLeft += delta;
+        volScrollPos = volTrack.scrollLeft;
         updateVolProgress();
-        pauseVolAutoScrollTemporarily(2400, 'Scrolling');
+        pauseVolAutoScrollTemporarily(400, 'Scrolling');
       }
     }, { passive: true });
 
-    volTrack.addEventListener('scroll', updateVolProgress, { passive: true });
+    volTrack.addEventListener('scroll', () => {
+      if (isDraggingTrack) {
+        volScrollPos = volTrack.scrollLeft;
+      }
+      updateVolProgress();
+    }, { passive: true });
   }
 
   // Smooth continuous requestAnimationFrame horizontal auto-scroll loop
@@ -1160,22 +1179,25 @@ Qualifications:
       const maxScroll = volTrack.scrollWidth - volTrack.clientWidth;
       if (maxScroll > 10) {
         if (volTrack.scrollLeft >= maxScroll - 2) {
-          // Reached the end: pause for 2.4s, then smoothly rewind back to start
+          // Reached the end: pause briefly for 800ms, then smoothly rewind back to start
           isRewinding = true;
           volIsPaused = true;
           updateAutoplayUI(false, 'Looping');
           setTimeout(() => {
             if (volTrack) {
               volTrack.scrollTo({ left: 0, behavior: 'smooth' });
+              volScrollPos = 0;
             }
             setTimeout(() => {
               isRewinding = false;
               volIsPaused = false;
+              if (volTrack) volScrollPos = volTrack.scrollLeft;
               if (volAutoPlay) updateAutoplayUI(true, 'Auto-Scroll');
-            }, 1000);
-          }, 2400);
+            }, 500);
+          }, 800);
         } else {
-          volTrack.scrollLeft += volSpeed;
+          volScrollPos += volSpeed;
+          volTrack.scrollLeft = volScrollPos;
           updateVolProgress();
         }
       }
@@ -1184,7 +1206,7 @@ Qualifications:
     requestAnimationFrame(autoScrollLoop);
   }
 
-  // Start the auto-scroll loop & initialize progress bar
+  // Start the auto-scroll loop & initialize progress bar immediately
   requestAnimationFrame(autoScrollLoop);
   updateVolProgress();
 
@@ -1242,474 +1264,46 @@ Qualifications:
   });
 
   // =========================================================================
-  // 13. INTERACTIVE PALETTE SWITCHER (Multi-Theme System)
+  // 13. THEME INITIALIZATION (Locked to Modern Blue / Hyper Cyan)
   // =========================================================================
-  const themeButtons = document.querySelectorAll('.theme-dot-btn');
-  const storedTheme = localStorage.getItem('chethan-portfolio-theme') || 'emerald';
-
-  function applyTheme(themeName) {
-    document.documentElement.setAttribute('data-theme', themeName);
-    localStorage.setItem('chethan-portfolio-theme', themeName);
-
-    themeButtons.forEach(btn => {
-      if (btn.getAttribute('data-theme-name') === themeName) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
-  }
-
-  // Initialize theme
-  applyTheme(storedTheme);
-
-  themeButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const selectedTheme = btn.getAttribute('data-theme-name');
-      if (selectedTheme) {
-        applyTheme(selectedTheme);
-      }
-    });
-  });
+  try {
+    localStorage.removeItem('chethan-portfolio-theme');
+  } catch (e) {}
+  document.documentElement.setAttribute('data-theme', 'cyan');
 
   // =========================================================================
-  // 16. ETHEREAL FLUID SMOKE (GLOBAL VOLUMETRIC BACKGROUND ENGINE)
+  // 16. CLEAN & PROFESSIONAL SPOTLIGHT INTERACTION
   // =========================================================================
-  const bgCanvas = document.getElementById('smartBgCanvas');
-  if (bgCanvas && bgCanvas.getContext) {
-    const ctx = bgCanvas.getContext('2d');
-    let width = 0;
-    let height = 0;
-    let dpr = 1;
-    let animFrameId = null;
-    let isVisible = true;
+  const bgSpotlight = document.getElementById('bgSpotlight');
+  if (bgSpotlight) {
+    let targetX = window.innerWidth * 0.5;
+    let targetY = window.innerHeight * 0.25;
+    let currentX = targetX;
+    let currentY = targetY;
+    let isTracking = false;
 
-    // Theme Colors with smooth interpolation
-    let targetPrimary = { r: 0, g: 245, b: 160 }; // Default Cyber Emerald
-    let targetSecondary = { r: 0, g: 210, b: 223 }; // Cyber Cyan
-    let curPrimary = { r: 0, g: 245, b: 160 };
-    let curSecondary = { r: 0, g: 210, b: 223 };
-
-    function parseColor(hexStr, fallback) {
-      if (!hexStr) return fallback;
-      hexStr = hexStr.trim();
-      if (hexStr.startsWith('#')) {
-        let hex = hexStr.slice(1);
-        if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
-        const num = parseInt(hex, 16);
-        return {
-          r: (num >> 16) & 255,
-          g: (num >> 8) & 255,
-          b: num & 255
-        };
-      }
-      return fallback;
-    }
-
-    function updateThemeColors() {
-      const style = getComputedStyle(document.documentElement);
-      const pri = style.getPropertyValue('--accent-primary');
-      const sec = style.getPropertyValue('--accent-secondary');
-      targetPrimary = parseColor(pri, { r: 0, g: 245, b: 160 });
-      targetSecondary = parseColor(sec, { r: 0, g: 210, b: 223 });
-    }
-    updateThemeColors();
-
-    const themeObserver = new MutationObserver(() => {
-      updateThemeColors();
-    });
-    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-
-    // Pre-rendered Volumetric Smoke Stamps (Offscreen Canvases for 60 FPS GPU texture blitting)
-    const stampSize = 256;
-    const stamps = {
-      primaryPuff: document.createElement('canvas'),
-      secondaryPuff: document.createElement('canvas'),
-      primaryWisp: document.createElement('canvas'),
-      secondaryWisp: document.createElement('canvas'),
-      darkShadow: document.createElement('canvas')
-    };
-
-    Object.values(stamps).forEach(c => {
-      c.width = stampSize;
-      c.height = stampSize;
-    });
-
-    function bakeStamps(c1, c2) {
-      const half = stampSize / 2;
-
-      // 1. Primary Soft Billow Puff
-      const ctx1 = stamps.primaryPuff.getContext('2d');
-      ctx1.clearRect(0, 0, stampSize, stampSize);
-      const grad1 = ctx1.createRadialGradient(half, half, 0, half, half, half);
-      grad1.addColorStop(0, `rgba(${c1.r}, ${c1.g}, ${c1.b}, 0.28)`);
-      grad1.addColorStop(0.35, `rgba(${c1.r}, ${c1.g}, ${c1.b}, 0.16)`);
-      grad1.addColorStop(0.65, `rgba(${c1.r}, ${c1.g}, ${c1.b}, 0.05)`);
-      grad1.addColorStop(1, 'rgba(0, 0, 0, 0)');
-      ctx1.fillStyle = grad1;
-      ctx1.beginPath();
-      ctx1.arc(half, half, half, 0, Math.PI * 2);
-      ctx1.fill();
-
-      // 2. Secondary Billow Puff
-      const ctx2 = stamps.secondaryPuff.getContext('2d');
-      ctx2.clearRect(0, 0, stampSize, stampSize);
-      const grad2 = ctx2.createRadialGradient(half, half, 0, half, half, half);
-      grad2.addColorStop(0, `rgba(${c2.r}, ${c2.g}, ${c2.b}, 0.26)`);
-      grad2.addColorStop(0.38, `rgba(${c2.r}, ${c2.g}, ${c2.b}, 0.14)`);
-      grad2.addColorStop(0.7, `rgba(${c2.r}, ${c2.g}, ${c2.b}, 0.04)`);
-      grad2.addColorStop(1, 'rgba(0, 0, 0, 0)');
-      ctx2.fillStyle = grad2;
-      ctx2.beginPath();
-      ctx2.arc(half, half, half, 0, Math.PI * 2);
-      ctx2.fill();
-
-      // 3. Primary Wispy Asymmetrical Smoke Wisp
-      const ctx3 = stamps.primaryWisp.getContext('2d');
-      ctx3.clearRect(0, 0, stampSize, stampSize);
-      const g3a = ctx3.createRadialGradient(half * 0.8, half * 0.9, 0, half * 0.8, half * 0.9, half * 0.7);
-      g3a.addColorStop(0, `rgba(${c1.r}, ${c1.g}, ${c1.b}, 0.22)`);
-      g3a.addColorStop(0.5, `rgba(${c1.r}, ${c1.g}, ${c1.b}, 0.08)`);
-      g3a.addColorStop(1, 'rgba(0, 0, 0, 0)');
-      ctx3.fillStyle = g3a;
-      ctx3.beginPath();
-      ctx3.arc(half * 0.8, half * 0.9, half * 0.7, 0, Math.PI * 2);
-      ctx3.fill();
-
-      const g3b = ctx3.createRadialGradient(half * 1.25, half * 1.15, 0, half * 1.25, half * 1.15, half * 0.55);
-      g3b.addColorStop(0, `rgba(${c1.r}, ${c1.g}, ${c1.b}, 0.16)`);
-      g3b.addColorStop(0.6, `rgba(${c1.r}, ${c1.g}, ${c1.b}, 0.04)`);
-      g3b.addColorStop(1, 'rgba(0, 0, 0, 0)');
-      ctx3.fillStyle = g3b;
-      ctx3.beginPath();
-      ctx3.arc(half * 1.25, half * 1.15, half * 0.55, 0, Math.PI * 2);
-      ctx3.fill();
-
-      // 4. Secondary Wispy Tendril
-      const ctx4 = stamps.secondaryWisp.getContext('2d');
-      ctx4.clearRect(0, 0, stampSize, stampSize);
-      const g4a = ctx4.createRadialGradient(half * 1.1, half * 0.8, 0, half * 1.1, half * 0.8, half * 0.65);
-      g4a.addColorStop(0, `rgba(${c2.r}, ${c2.g}, ${c2.b}, 0.20)`);
-      g4a.addColorStop(0.5, `rgba(${c2.r}, ${c2.g}, ${c2.b}, 0.06)`);
-      g4a.addColorStop(1, 'rgba(0, 0, 0, 0)');
-      ctx4.fillStyle = g4a;
-      ctx4.beginPath();
-      ctx4.arc(half * 1.1, half * 0.8, half * 0.65, 0, Math.PI * 2);
-      ctx4.fill();
-
-      // 5. Deep Atmospheric Shadow Haze
-      const ctx5 = stamps.darkShadow.getContext('2d');
-      ctx5.clearRect(0, 0, stampSize, stampSize);
-      const grad5 = ctx5.createRadialGradient(half, half, 0, half, half, half);
-      grad5.addColorStop(0, 'rgba(6, 11, 20, 0.42)');
-      grad5.addColorStop(0.5, 'rgba(8, 14, 24, 0.22)');
-      grad5.addColorStop(0.85, 'rgba(10, 16, 28, 0.05)');
-      grad5.addColorStop(1, 'rgba(0, 0, 0, 0)');
-      ctx5.fillStyle = grad5;
-      ctx5.beginPath();
-      ctx5.arc(half, half, half, 0, Math.PI * 2);
-      ctx5.fill();
-    }
-    bakeStamps(curPrimary, curSecondary);
-
-    // Pointer tracking & fluid disturbance
-    const pointer = {
-      x: -1000,
-      y: -1000,
-      prevX: -1000,
-      prevY: -1000,
-      vx: 0,
-      vy: 0,
-      speed: 0,
-      active: false
-    };
-
-    let idleAngle = 0;
-
-    // Ambient Volumetric Smoke Particles
-    const smokePuffs = [];
-    const isMobile = window.innerWidth < 768;
-    const puffCount = isMobile ? 32 : 58;
-
-    class SmokePuff {
-      constructor(init = true) {
-        this.reset(init);
-      }
-
-      reset(init = false) {
-        this.x = Math.random() * width;
-        this.y = init ? Math.random() * height : height + (50 + Math.random() * 120);
-        this.baseSize = isMobile ? (200 + Math.random() * 260) : (280 + Math.random() * 380);
-        this.size = this.baseSize;
-        
-        // Gentle buoyancy (smoke slowly rises and weaves)
-        this.vy = -(0.25 + Math.random() * 0.45);
-        this.vx = (Math.random() - 0.5) * 0.35;
-        this.angle = Math.random() * Math.PI * 2;
-        this.rotSpeed = (Math.random() - 0.5) * 0.003;
-        
-        // Breathing pulsation
-        this.pulseFreq = 0.008 + Math.random() * 0.012;
-        this.pulsePhase = Math.random() * Math.PI * 2;
-        
-        // Stamp type
-        const rand = Math.random();
-        if (rand < 0.35) this.stampType = 'primaryPuff';
-        else if (rand < 0.65) this.stampType = 'secondaryPuff';
-        else if (rand < 0.85) this.stampType = 'primaryWisp';
-        else this.stampType = 'secondaryWisp';
-
-        this.alpha = 0.28 + Math.random() * 0.45;
-        this.life = 0;
-        this.fadeIn = init ? 1 : 0;
-      }
-
-      update(time) {
-        // Natural harmonic wave drift (fluid curling)
-        const waveX = Math.sin(time * 0.0008 + this.y * 0.0025) * 0.4;
-        const waveY = Math.cos(time * 0.0006 + this.x * 0.002) * 0.18;
-        
-        this.x += this.vx + waveX;
-        this.y += this.vy + waveY;
-        this.angle += this.rotSpeed;
-
-        // Pulsating size
-        const pulse = 1 + Math.sin(time * this.pulseFreq + this.pulsePhase) * 0.12;
-        this.size = this.baseSize * pulse;
-
-        // Pointer fluid interaction (smoke swirls and deflects around cursor)
-        if (pointer.active) {
-          const dx = this.x - pointer.x;
-          const dy = this.y - pointer.y;
-          const distSq = dx * dx + dy * dy;
-          const interactRadius = 240;
-          if (distSq < interactRadius * interactRadius && distSq > 4) {
-            const dist = Math.sqrt(distSq);
-            const force = (1 - dist / interactRadius) * (pointer.speed * 0.08 + 0.4);
-            // Deflect outward
-            this.x += (dx / dist) * force * 3.5;
-            this.y += (dy / dist) * force * 3.5;
-            // Impart vortex swirl
-            this.rotSpeed += (pointer.vx * dy - pointer.vy * dx) * 0.000003;
-          }
-        }
-
-        // Fade in when entering from bottom
-        if (this.fadeIn < 1) {
-          this.fadeIn += 0.012;
-          if (this.fadeIn > 1) this.fadeIn = 1;
-        }
-
-        // Boundary wrap: if drifted above viewport, reset at bottom
-        if (this.y < -this.size) {
-          this.reset(false);
-        }
-        if (this.x < -this.size) this.x = width + this.size * 0.5;
-        if (this.x > width + this.size) this.x = -this.size * 0.5;
-      }
-
-      draw() {
-        const stamp = stamps[this.stampType];
-        if (!stamp) return;
-
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.rotate(this.angle);
-        ctx.globalAlpha = this.alpha * this.fadeIn;
-        const half = this.size / 2;
-        ctx.drawImage(stamp, -half, -half, this.size, this.size);
-        ctx.restore();
-      }
-    }
-
-    // Dynamic Trail Smoke Wisps (spawned by moving cursor)
-    const trailWisps = [];
-    const maxTrailWisps = 45;
-
-    class TrailWisp {
-      constructor(x, y, vx, vy) {
-        this.x = x + (Math.random() - 0.5) * 16;
-        this.y = y + (Math.random() - 0.5) * 16;
-        this.vx = vx * 0.28 + (Math.random() - 0.5) * 0.8;
-        this.vy = vy * 0.28 - 0.35 + (Math.random() - 0.5) * 0.5;
-        this.angle = Math.random() * Math.PI * 2;
-        this.rotSpeed = (Math.random() - 0.5) * 0.04;
-        this.size = 70 + Math.random() * 90;
-        this.growRate = 1.4 + Math.random() * 1.8;
-        this.alpha = 0.55 + Math.random() * 0.35;
-        this.decay = 0.012 + Math.random() * 0.01;
-        this.stampType = Math.random() > 0.4 ? 'primaryPuff' : 'secondaryWisp';
-      }
-
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        this.vx *= 0.97;
-        this.vy *= 0.97;
-        this.size += this.growRate;
-        this.angle += this.rotSpeed;
-        this.alpha -= this.decay;
-        return this.alpha > 0;
-      }
-
-      draw() {
-        if (this.alpha <= 0) return;
-        const stamp = stamps[this.stampType];
-        if (!stamp) return;
-
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.rotate(this.angle);
-        ctx.globalAlpha = Math.max(0, this.alpha);
-        const half = this.size / 2;
-        ctx.drawImage(stamp, -half, -half, this.size, this.size);
-        ctx.restore();
-      }
-    }
-
-    function resizeCanvas() {
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      width = window.innerWidth;
-      height = window.innerHeight;
-      bgCanvas.width = width * dpr;
-      bgCanvas.height = height * dpr;
-      bgCanvas.style.width = `${width}px`;
-      bgCanvas.style.height = `${height}px`;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-      if (smokePuffs.length === 0) {
-        for (let i = 0; i < puffCount; i++) {
-          smokePuffs.push(new SmokePuff(true));
-        }
-      }
-    }
-
-    window.addEventListener('resize', resizeCanvas, { passive: true });
-    resizeCanvas();
-
-    // Mouse & Touch Tracking
-    let lastSpawnTime = 0;
-    function handlePointerMove(clientX, clientY) {
-      if (pointer.prevX === -1000) {
-        pointer.prevX = clientX;
-        pointer.prevY = clientY;
-      } else {
-        pointer.prevX = pointer.x;
-        pointer.prevY = pointer.y;
-      }
-      pointer.x = clientX;
-      pointer.y = clientY;
-      pointer.vx = pointer.x - pointer.prevX;
-      pointer.vy = pointer.y - pointer.prevY;
-      pointer.speed = Math.hypot(pointer.vx, pointer.vy);
-      pointer.active = true;
-
-      // Spawn interactive trailing smoke wisp if moving fast enough
-      const now = performance.now();
-      if (pointer.speed > 3 && now - lastSpawnTime > 40 && trailWisps.length < maxTrailWisps) {
-        trailWisps.push(new TrailWisp(pointer.x, pointer.y, pointer.vx, pointer.vy));
-        lastSpawnTime = now;
-      }
-    }
-
-    window.addEventListener('pointermove', (e) => {
-      handlePointerMove(e.clientX, e.clientY);
-    }, { passive: true });
-
-    document.addEventListener('pointerleave', () => {
-      pointer.active = false;
-      pointer.prevX = -1000;
-      pointer.prevY = -1000;
-    });
-
-    // Touch support
-    window.addEventListener('touchmove', (e) => {
-      if (e.touches && e.touches[0]) {
-        handlePointerMove(e.touches[0].clientX, e.touches[0].clientY);
+    window.addEventListener('mousemove', (e) => {
+      targetX = e.clientX;
+      targetY = e.clientY;
+      if (!isTracking) {
+        isTracking = true;
+        requestAnimationFrame(smoothUpdateSpotlight);
       }
     }, { passive: true });
 
-    window.addEventListener('touchend', () => {
-      pointer.active = false;
-    });
+    function smoothUpdateSpotlight() {
+      currentX += (targetX - currentX) * 0.12;
+      currentY += (targetY - currentY) * 0.12;
 
-    let frameCount = 0;
+      bgSpotlight.style.setProperty('--mouse-x', currentX.toFixed(1) + 'px');
+      bgSpotlight.style.setProperty('--mouse-y', currentY.toFixed(1) + 'px');
 
-    function renderSmokeField(time) {
-      frameCount++;
-
-      // Smooth color transition interpolation towards target theme
-      let colorChanged = false;
-      const lerp = 0.08;
-      ['r', 'g', 'b'].forEach(ch => {
-        if (Math.abs(curPrimary[ch] - targetPrimary[ch]) > 0.5) {
-          curPrimary[ch] += (targetPrimary[ch] - curPrimary[ch]) * lerp;
-          colorChanged = true;
-        }
-        if (Math.abs(curSecondary[ch] - targetSecondary[ch]) > 0.5) {
-          curSecondary[ch] += (targetSecondary[ch] - curSecondary[ch]) * lerp;
-          colorChanged = true;
-        }
-      });
-      if (colorChanged && frameCount % 3 === 0) {
-        bakeStamps(curPrimary, curSecondary);
-      }
-
-      // Idle atmospheric breeze simulation when user is not moving pointer
-      if (!pointer.active) {
-        idleAngle += 0.006;
-        pointer.x = width * 0.5 + Math.cos(idleAngle) * (width * 0.35);
-        pointer.y = height * 0.5 + Math.sin(idleAngle * 1.3) * (height * 0.28);
-        pointer.speed = 1.2;
-        pointer.vx = -Math.sin(idleAngle) * 1.2;
-        pointer.vy = Math.cos(idleAngle * 1.3) * 1.2;
+      if (Math.abs(targetX - currentX) > 0.5 || Math.abs(targetY - currentY) > 0.5) {
+        requestAnimationFrame(smoothUpdateSpotlight);
       } else {
-        pointer.speed *= 0.92;
-      }
-
-      // Clear Canvas
-      ctx.clearRect(0, 0, width, height);
-
-      // Set Blending Mode for Volumetric Smoke Depth
-      ctx.globalCompositeOperation = 'screen';
-
-      // 1. Draw Deep Volumetric Smoke Puffs
-      for (let i = 0; i < smokePuffs.length; i++) {
-        const puff = smokePuffs[i];
-        puff.update(time);
-        puff.draw();
-      }
-
-      // 2. Draw Interactive Trail Smoke Wisps
-      for (let i = trailWisps.length - 1; i >= 0; i--) {
-        const wisp = trailWisps[i];
-        const alive = wisp.update();
-        if (alive) {
-          wisp.draw();
-        } else {
-          trailWisps.splice(i, 1);
-        }
-      }
-
-      // Restore composite operation
-      ctx.globalCompositeOperation = 'source-over';
-
-      if (isVisible) {
-        animFrameId = requestAnimationFrame(renderSmokeField);
+        isTracking = false;
       }
     }
-
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        isVisible = false;
-        if (animFrameId) cancelAnimationFrame(animFrameId);
-      } else {
-        isVisible = true;
-        animFrameId = requestAnimationFrame(renderSmokeField);
-      }
-    });
-
-    animFrameId = requestAnimationFrame(renderSmokeField);
   }
 
 
